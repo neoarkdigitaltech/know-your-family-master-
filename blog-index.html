@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stories & Insights | Know Your Family</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Tiro+Tamil:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .category-nav { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 4rem; }
+        .category-pill { padding: 0.8rem 1.5rem; background: var(--white); border: 1px solid rgba(47, 133, 90,0.1); border-radius: var(--border-radius-pill); color: var(--primary); text-decoration: none; font-weight: 500; transition: all 0.2s; }
+        .category-pill:hover, .category-pill.active { background: var(--primary); color: var(--background); box-shadow: 0 5px 15px rgba(47, 133, 90,0.1); }
+    </style>
+</head>
+<body>
+    <nav class="navbar" style="position: static; background: var(--background); border-bottom: 1px solid rgba(47, 133, 90,0.1);">
+        <a href="index.html" class="logo">Know Your Family</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="blog-index.html">Stories</a>
+            <a href="contact.html" class="btn-primary-sm">Contact Us</a>
+        </div>
+    </nav>
+
+    <main class="bg-base">
+        <section class="section text-center" style="padding-bottom: 4rem;">
+            <div class="container gs-fade">
+                <h1 style="font-family: 'Playfair Display', serif; font-size: 4rem; color: var(--primary);">Stories & Insights</h1>
+                <p class="text-muted" style="font-size: 1.2rem; margin-top: 1rem;">Exploring Tamil migration, culture, and preservation.</p>
+            </div>
+        </section>
+        
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <!-- Blog Categories -->
+                <div class="category-nav gs-fade">
+                    <a href="#" class="category-pill active">All Stories</a>
+                    <a href="#" class="category-pill">Tamil Migration History</a>
+                    <a href="#" class="category-pill">Cultural Traditions & Festivals</a>
+                    <a href="#" class="category-pill">Family Preservation Tips</a>
+                    <a href="#" class="category-pill">Real Family Stories</a>
+                </div>
+                
+                <!-- Blog Grid -->
+                <div class="blog-grid">
+                    <a href="blog.html" class="blog-card gs-fade">
+                        <div class="blog-img" style="background-image: url('images/blog_migration.png');"></div>
+                        <div class="blog-content">
+                            <span class="text-gold" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Migration History</span>
+                            <h3 style="margin-top: 0.5rem;">The Story of Tamil Migration to Malaysia</h3>
+                            <p class="text-muted">Discover the historical waves that brought our ancestors across the sea.</p>
+                            <span class="read-more">Read Editorial →</span>
+                        </div>
+                    </a>
+                    
+                    <a href="blog.html" class="blog-card gs-fade">
+                        <div class="blog-img" style="background-image: url('images/blog_generations.png');"></div>
+                        <div class="blog-content">
+                            <span class="text-gold" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Preservation Tips</span>
+                            <h3 style="margin-top: 0.5rem;">Why Younger Generations Are Losing Touch</h3>
+                            <p class="text-muted">And what we can do to bridge the cultural gap.</p>
+                            <span class="read-more">Read Editorial →</span>
+                        </div>
+                    </a>
+                    
+                    <a href="blog.html" class="blog-card gs-fade">
+                        <div class="blog-img" style="background-image: url('images/blog_identity.png');"></div>
+                        <div class="blog-content">
+                            <span class="text-gold" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Cultural Traditions</span>
+                            <h3 style="margin-top: 0.5rem;">What Your Family History Reveals</h3>
+                            <p class="text-muted">How ancestral stories shape our modern identity.</p>
+                            <span class="read-more">Read Editorial →</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Placeholder Card -->
+                    <a href="#" class="blog-card gs-fade">
+                        <div class="blog-img" style="background: rgba(47, 133, 90,0.1); display: flex; align-items: center; justify-content: center;">
+                            <span style="color: var(--primary); font-family: 'Playfair Display', serif; font-size: 1.5rem;">Coming Soon</span>
+                        </div>
+                        <div class="blog-content">
+                            <span class="text-gold" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Real Stories</span>
+                            <h3 style="margin-top: 0.5rem;">[FILLER - Actual Blog Post]</h3>
+                            <p class="text-muted">More incredible family histories will be published here soon.</p>
+                            <span class="read-more">Read Editorial →</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <!-- Brand Column -->
+            <div class="footer-col brand-col">
+                <div class="footer-logo-container">
+                    <div class="footer-logo-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polygon points="12,2 22,12 12,22 2,12" />
+                            <circle cx="12" cy="12" r="3" fill="currentColor" />
+                        </svg>
+                    </div>
+                    <span class="footer-brand-name">Know Your Family</span>
+                </div>
+                <p class="footer-desc">Dedicated to preserving Tamil culture through premium genealogy, personal history, and breathtaking legacy books.</p>
+                <div class="footer-socials">
+                    <a href="#" class="social-box" aria-label="Facebook">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="#" class="social-box" aria-label="Instagram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="#" class="social-box" aria-label="YouTube">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                    </a>
+                </div>
+            </div>
+            <!-- Services Column -->
+            <div class="footer-col">
+                <h4 class="footer-heading">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="services.html">Lineage Research</a></li>
+                    <li><a href="services.html">Elder Interviews</a></li>
+                    <li><a href="services.html">Tamil Translations</a></li>
+                    <li><a href="services.html">Heirloom Publishing</a></li>
+                </ul>
+            </div>
+            <!-- Discover Column -->
+            <div class="footer-col">
+                <h4 class="footer-heading">Discover</h4>
+                <ul class="footer-links">
+                    <li><a href="about.html">Our Heritage</a></li>
+                    <li><a href="index.html#how-it-works">The Journey</a></li>
+                    <li><a href="services.html">Gallery of Books</a></li>
+                    <li><a href="blog-index.html">Cultural Blog</a></li>
+                </ul>
+            </div>
+            <!-- Connect Column -->
+            <div class="footer-col">
+                <h4 class="footer-heading">Connect</h4>
+                <ul class="footer-contact">
+                    <li><a href="tel:18002081405" class="contact-link">1 (800) 208-1405</a></li>
+                    <li><a href="mailto:hello@knowyourfamily.com" class="contact-link">hello@knowyourfamily.com</a></li>
+                    <li class="contact-text">Chennai & Worldwide</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Footer Bottom -->
+        <div class="container footer-bottom">
+            <p class="copyright">&copy; 2026 Know Your Family. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

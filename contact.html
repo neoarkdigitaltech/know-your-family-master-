@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Know Your Family</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Tiro+Tamil:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar" style="position: static; background: var(--primary); border-bottom: 1px solid rgba(255,255,255,0.1);">
+        <a href="index.html" class="logo" style="color: var(--background);">Know Your Family</a>
+        <div class="nav-links">
+            <a href="index.html" style="color: var(--background);">Home</a>
+            <a href="about.html" style="color: var(--background);">About Us</a>
+            <a href="services.html" style="color: var(--background);">Services</a>
+            <a href="blog-index.html" style="color: var(--background);">Stories</a>
+            <a href="contact.html" class="btn-gold">Contact Us</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- CONTACT SPLIT SECTION -->
+        <section class="contact-split-section" style="min-height: calc(100vh - 80px);">
+            
+            <!-- Deep Teal Contact Info Side -->
+            <div class="faq-half" style="display: flex; flex-direction: column; justify-content: center;">
+                <div class="gs-fade">
+                    <span class="tamil-sub" style="color: var(--secondary);">தொடர்பு கொள்ள</span>
+                    <h1 style="font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--background); margin: 0.5rem 0 2rem;">Get in Touch</h1>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="color: var(--secondary); font-size: 1.1rem; margin-bottom: 0.5rem; font-family: 'Outfit', sans-serif;">Office Location</h3>
+                        <p style="color: rgba(240, 234, 214, 0.8); font-size: 1.1rem; line-height: 1.6;">
+                            [FILLER - Physical Address Line 1]<br>
+                            [FILLER - City, State, ZIP]<br>
+                            Malaysia
+                        </p>
+                    </div>
+
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="color: var(--secondary); font-size: 1.1rem; margin-bottom: 0.5rem; font-family: 'Outfit', sans-serif;">Direct Line</h3>
+                        <p style="color: rgba(240, 234, 214, 0.8); font-size: 1.1rem;">[FILLER - Phone Number]</p>
+                    </div>
+
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="color: var(--secondary); font-size: 1.1rem; margin-bottom: 0.5rem; font-family: 'Outfit', sans-serif;">Social Media</h3>
+                        <div style="display: flex; gap: 1rem;">
+                            <a href="#" style="color: var(--background); text-decoration: none;">[FILLER - Instagram]</a>
+                            <a href="#" style="color: var(--background); text-decoration: none;">[FILLER - Facebook]</a>
+                        </div>
+                    </div>
+
+                    <a href="#" class="btn-whatsapp" style="margin-top: 1rem;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 0C5.383 0 0 5.383 0 12.031c0 2.12.553 4.184 1.603 6.002L.15 23.46l5.568-1.46A12.022 12.022 0 0012.031 24c6.647 0 12.03-5.383 12.03-12.031C24.06 5.383 18.678 0 12.031 0zm0 21.996c-1.785 0-3.53-.478-5.06-1.385l-.362-.215-3.763.987.996-3.668-.236-.375a10.021 10.021 0 01-1.545-5.309c0-5.545 4.512-10.057 10.057-10.057 5.545 0 10.056 4.512 10.056 10.057 0 5.545-4.511 10.056-10.056 10.056z"/></svg>
+                        [FILLER - WhatsApp]
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Off White Form Side -->
+            <div class="form-half bg-base" style="display: flex; flex-direction: column; justify-content: center;">
+                <div class="form-wrapper gs-fade" style="box-shadow: 0 20px 50px rgba(47, 133, 90,0.1);">
+                    <h2 style="color: var(--primary);">Send an Inquiry</h2>
+                    <p class="text-muted mb-4">Fill out the form below and we will contact you within 24 hours.</p>
+                    
+                    <form id="inquiry-form" action="thank-you.html">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="Karthik" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" placeholder="you@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="+60 12 345 6789" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea rows="4" placeholder="Tell us a little about your family..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary w-100 mt-4">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <!-- Brand Column -->
+            <div class="footer-col brand-col">
+                <div class="footer-logo-container">
+                    <div class="footer-logo-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polygon points="12,2 22,12 12,22 2,12" />
+                            <circle cx="12" cy="12" r="3" fill="currentColor" />
+                        </svg>
+                    </div>
+                    <span class="footer-brand-name">Know Your Family</span>
+                </div>
+                <p class="footer-desc">Dedicated to preserving Tamil culture through premium genealogy, personal history, and breathtaking legacy books.</p>
+                <div class="footer-socials">
+                    <a href="#" class="social-box" aria-label="Facebook">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="#" class="social-box" aria-label="Instagram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="#" class="social-box" aria-label="YouTube">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                    </a>
+                </div>
+            </div>
+            <!-- Services Column -->
+            <div class="footer-col">
+                <h4 class="footer-heading">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="services.html">Lineage Research</a></li>
+                    <li><a href="services.html">Elder Interviews</a></li>
+                    <li><a href="services.html">Tamil Translations</a></li>
+                    <li><a href="services.html">Heirloom Publishing</a></li>
+                </ul>
+            </div>
+            <!-- Discover Column -->
+            <div class="footer-col">
+                <h4 class="footer-heading">Discover</h4>
+                <ul class="footer-links">
+                    <li><a href="about.html">Our Heritage</a></li>
+                    <li><a href="index.html#how-it-works">The Journey</a></li>
+                    <li><a href="services.html">Gallery of Books</a></li>
+                    <li><a href="blog-index.html">Cultural Blog</a></li>
+                </ul>
+            </div>
+            <!-- Connect Column -->
+            <div class="footer-col">
+                <h4 class="footer-heading">Connect</h4>
+                <ul class="footer-contact">
+                    <li><a href="tel:18002081405" class="contact-link">1 (800) 208-1405</a></li>
+                    <li><a href="mailto:hello@knowyourfamily.com" class="contact-link">hello@knowyourfamily.com</a></li>
+                    <li class="contact-text">Chennai & Worldwide</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Footer Bottom -->
+        <div class="container footer-bottom">
+            <p class="copyright">&copy; 2026 Know Your Family. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

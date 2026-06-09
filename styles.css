@@ -1,0 +1,1493 @@
+/* 
+  Know Your Family - Old Tamil Culture Luxury Aesthetic
+  Inspired by: Chola Dynasty grandeur, Temple architecture, Aged parchment & burnished gold
+  Colors: Deep Temple Teal, Burnished Temple Gold, Aged Ivory/Parchment
+  Typography: Playfair Display (Serif), Outfit (Sans-serif), Tiro Tamil (Tamil Serif)
+*/
+
+:root {
+    /* Old Tamil Culture Luxury Palette - Dark Theme with Gold Fonts */
+    --bg-base: #1A120B;         /* Very dark brown/black from the image */
+    --deep-teal: #EADBB6;       /* Pale Gold/Cream text */
+    --deep-teal-hover: #FFFFFF;
+    --antique-gold: #D4AF37;    /* Rich Metallic Gold */
+    --antique-gold-hover: #F0E6D2;
+    --white: #FFFFFF;
+    
+    /* Variable Aliases to support legacy classes */
+    --primary: var(--deep-teal);
+    --secondary: var(--antique-gold);
+    --background: var(--bg-base);
+    
+    /* Extended Temple Palette */
+    --temple-maroon: #800000;   /* Deep red */
+    --aged-bronze: #8B6914;     /* Aged bronze idol tone */
+    --parchment-dark: #2A1C14;  /* Dark parchment for borders */
+    --temple-shadow: rgba(0, 0, 0, 0.5);
+    
+    /* Text Colors */
+    --text-dark: #EADBB6;       /* Pale gold text */
+    --text-muted: #BFA888;      /* Muted gold */
+    --text-light: #F5F5F5;
+    
+    /* UI Systems - Sharp Temple Architecture */
+    --border-radius-lg: 4px;    /* Sharp, architectural — like temple stone blocks */
+    --border-radius-md: 2px;
+    --border-radius-pill: 0px;  /* Zero radius for luxury buttons */
+    
+    /* Aurora Gradient (Temple atmospheric) */
+    --transparent: rgba(255, 255, 255, 0);
+    --aurora-teal-1: #800000;
+    --aurora-gold-1: #F0E6D2;
+    --aurora-teal-2: #2E8B57;
+    --aurora-gold-2: #D62828;
+    --aurora-teal-3: #800000;
+    
+    --white-gradient: repeating-linear-gradient(100deg, var(--white) 0%, var(--white) 5%, var(--transparent) 8%, var(--transparent) 10%, var(--white) 15%);
+    --aurora-gradient: repeating-linear-gradient(100deg, var(--aurora-teal-1) 10%, var(--aurora-gold-1) 15%, var(--aurora-teal-2) 20%, var(--aurora-gold-2) 25%, var(--aurora-teal-3) 30%);
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+html { 
+    scroll-behavior: smooth; 
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-base);
+    color: var(--text-dark);
+    line-height: 1.7;
+    letter-spacing: 0.02em;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+}
+
+/* Subtle parchment grain texture overlay */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Typography with luxurious temple-carved spacing */
+h1, h2, h3, .display-quote {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+h2 { 
+    font-size: 2.75rem; 
+    line-height: 1.25; 
+    margin-bottom: 0.75rem; 
+}
+
+.tamil-sub {
+    font-family: 'Tiro Tamil', serif;
+    color: var(--antique-gold);
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.text-muted { color: var(--text-muted); }
+.text-light { color: var(--text-light); }
+.text-gold { color: var(--antique-gold); }
+
+/* Background Utilities */
+.bg-white { background-color: var(--white); }
+.bg-base { background-color: var(--bg-base); }
+.bg-teal-solid { background-color: var(--deep-teal); color: var(--text-light); }
+.bg-teal-solid h2, .bg-teal-solid h3 { color: var(--white); }
+.bg-teal-solid .text-muted { color: rgba(245, 245, 245, 0.7); }
+
+.bg-teal-gradient { 
+    background: linear-gradient(135deg, var(--deep-teal) 0%, #2A0000 100%); 
+    color: var(--text-light); 
+}
+.bg-teal-gradient h2, .bg-teal-gradient h3 { color: var(--white); }
+
+/* Layout Utilities */
+.container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 2.5rem; 
+}
+
+.shadow-lg { 
+    box-shadow: 0 25px 60px var(--temple-shadow); 
+}
+
+.rounded-img { 
+    border-radius: var(--border-radius-lg); 
+    width: 100%; 
+    object-fit: cover;
+    border: 1px solid rgba(240, 230, 210, 0.25);
+}
+
+.mt-4 { margin-top: 2rem; }
+.mb-4 { margin-bottom: 2rem; }
+.relative { position: relative; }
+.text-center-panel { max-width: 780px; margin: 0 auto; text-align: center; }
+
+/* ═══════════════════════════════════════════════════════
+   NAVBAR - Temple Gateway Inspired
+   ═══════════════════════════════════════════════════════ */
+.navbar {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    z-index: 50;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 2rem 3rem; 
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.logo { 
+    font-family: 'Playfair Display', serif; 
+    font-weight: 700; 
+    font-size: 1.5rem; 
+    letter-spacing: 0.05em; 
+    color: var(--deep-teal); 
+    text-decoration: none;
+}
+
+.nav-links { 
+    display: flex; 
+    align-items: center; 
+    gap: 2.5rem; 
+}
+
+.nav-links a:not(.btn-primary-sm) { 
+    text-decoration: none; 
+    color: var(--deep-teal); 
+    font-weight: 500; 
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    position: relative;
+    padding: 0.25rem 0;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.nav-links a:not(.btn-primary-sm)::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: -1;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.nav-links a:not(.btn-primary-sm)::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #D4AF37, #FFDF00, #D4AF37, transparent);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+    opacity: 0;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+.nav-links a:not(.btn-primary-sm):hover { 
+    color: #D4AF37; /* Metallic Gold */
+    text-shadow: 0 0 1px rgba(212, 175, 55, 0.4), 0 0 15px rgba(255, 215, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.nav-links a:not(.btn-primary-sm):hover::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.nav-links a:not(.btn-primary-sm):hover::after {
+    transform: scaleX(1);
+    opacity: 1;
+}
+
+/* ═══════════════════════════════════════════════════════
+   LUXURY BUTTONS - Sharp Temple Architecture
+   Sweep-in hover animation with pseudo-element
+   ═══════════════════════════════════════════════════════ */
+
+/* Contact Us - Nav Button */
+.btn-primary-sm {
+    position: relative;
+    background-color: var(--deep-teal); 
+    color: #0B172B !important;
+    padding: 0.75rem 1.75rem; 
+    border-radius: 0px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    border: 1px solid var(--deep-teal);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: pointer;
+    display: inline-block;
+    z-index: 1;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.btn-primary-sm::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0B172B;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: -1;
+}
+
+.btn-primary-sm:hover {
+    color: var(--deep-teal) !important;
+    border-color: #0B172B;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(11, 23, 43, 0.25);
+}
+
+.btn-primary-sm:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Primary CTA - Start My Legacy */
+.btn-primary {
+    position: relative;
+    background-color: var(--deep-teal); 
+    color: #0B172B;
+    padding: 1.15rem 3rem; 
+    border-radius: 0px;
+    text-decoration: none; 
+    font-weight: 600; 
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
+    border: 1px solid var(--deep-teal); 
+    cursor: pointer; 
+    display: inline-block;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0B172B;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: -1;
+}
+
+.btn-primary:hover { 
+    color: var(--deep-teal);
+    border-color: #0B172B;
+    transform: translateY(-3px); 
+    box-shadow: 0 15px 35px rgba(11, 23, 43, 0.3); 
+}
+
+.btn-primary:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Secondary CTA */
+.btn-secondary {
+    position: relative;
+    background-color: transparent; 
+    color: var(--deep-teal);
+    padding: 1.15rem 3rem; 
+    border-radius: 0px;
+    text-decoration: none; 
+    font-weight: 600; 
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    border: 1px solid var(--deep-teal); 
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
+    display: inline-block;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.btn-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--deep-teal);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: -1;
+}
+
+.btn-secondary:hover { 
+    color: var(--white); 
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(128, 0, 0, 0.2);
+}
+
+.btn-secondary:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Gold CTA - Preserve My Story */
+.btn-gold {
+    position: relative;
+    background-color: var(--antique-gold); 
+    color: var(--white);
+    padding: 1.15rem 3rem; 
+    border-radius: 0px;
+    text-decoration: none; 
+    font-weight: 600; 
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
+    border: 1px solid var(--antique-gold); 
+    cursor: pointer; 
+    display: inline-block;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.btn-gold::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--deep-teal);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: -1;
+}
+
+.btn-gold:hover { 
+    color: var(--white);
+    border-color: var(--deep-teal);
+    transform: translateY(-3px); 
+    box-shadow: 0 15px 35px rgba(128, 0, 0, 0.3); 
+}
+
+.btn-gold:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Full-width utility */
+.w-100 { width: 100%; }
+
+/* ═══════════════════════════════════════════════════════
+   AURORA HERO - Temple Sanctum Atmosphere
+   ═══════════════════════════════════════════════════════ */
+.aurora-hero {
+    position: relative; 
+    height: 100vh; 
+    min-height: 750px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    overflow: hidden; 
+    text-align: center; 
+    background-color: var(--bg-base);
+}
+
+.aurora-layer {
+    position: absolute; 
+    inset: -10px; 
+    opacity: 0.12;
+    filter: blur(45px);
+    -webkit-mask-image: radial-gradient(ellipse at 100% 0%, black 15%, transparent 70%);
+    mask-image: radial-gradient(ellipse at 100% 0%, black 15%, transparent 70%);
+    pointer-events: none; 
+    will-change: transform;
+}
+
+.aurora-layer::after {
+    content: ""; 
+    position: absolute; 
+    inset: 0;
+    background-image: var(--white-gradient), var(--aurora-gradient);
+    background-size: 200% 100%; 
+    background-attachment: fixed;
+    mix-blend-mode: multiply;
+    animation: aurora-anim 50s linear infinite;
+}
+
+.line-grid-overlay {
+    position: absolute; 
+    inset: 0; 
+    z-index: 5; 
+    pointer-events: none;
+    background-image: url('images/hero_ornate_bg_4k.png');
+    background-size: cover;
+    background-position: center;
+    /* Removed blend mode and opacity so the exact image is clearly visible */
+    opacity: 0.85; /* Slightly lowered opacity to ensure the gold text still pops */
+    animation: luxuryBreathe 25s ease-in-out infinite alternate;
+    transform-origin: center;
+}
+
+@keyframes luxuryBreathe {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.08);
+    }
+}
+
+@keyframes aurora-anim {
+    from { background-position: 50% 50%, 50% 50%; }
+    to { background-position: 250% 50%, 250% 50%; }
+}
+
+.hero-content-wrapper { 
+    position: relative; 
+    z-index: 10; 
+    max-width: 960px; 
+    padding: 0 2.5rem; 
+}
+
+.hero-content-wrapper h1 { 
+    font-size: 4.75rem; 
+    line-height: 1.12; 
+    margin-bottom: 1.5rem; 
+    letter-spacing: -0.01em;
+    background-image: linear-gradient(
+        -45deg, 
+        #0B172B 0%, 
+        #0B172B 35%, 
+        #274370 50%, 
+        #0B172B 65%, 
+        #0B172B 100%
+    );
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textFlowInside 4s linear infinite;
+    filter: drop-shadow(0px 2px 8px rgba(255, 255, 255, 0.15));
+}
+
+@keyframes textFlowInside {
+    to {
+        background-position: 200% center;
+    }
+}
+
+/* Changing Text */
+.changing-text-container { 
+    height: 3rem; 
+    position: relative; 
+    margin-bottom: 2.5rem; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.changing-text { 
+    position: absolute; 
+    font-size: 1.3rem; 
+    font-weight: 300; 
+    color: #FFF2CD; /* Changed from black to pale gold for contrast */
+    opacity: 0; 
+    transform: translateY(15px); 
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); 
+    width: 100%;
+    letter-spacing: 0.04em;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Added shadow for readability */
+}
+
+.changing-text.active { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+/* ═══════════════════════════════════════════════════════
+   METRICS STRIP - Temple Inscription Band
+   ═══════════════════════════════════════════════════════ */
+.metrics-strip { 
+    background: var(--deep-teal); 
+    padding: 4.5rem 0; 
+    border-top: 2px solid var(--antique-gold); 
+    border-bottom: 2px solid var(--antique-gold); 
+    position: relative;
+}
+
+/* Gold ornamental corners */
+.metrics-strip::before,
+.metrics-strip::after {
+    content: '✦';
+    position: absolute;
+    color: var(--antique-gold);
+    font-size: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.6;
+}
+
+.metrics-strip::before { left: 2rem; }
+.metrics-strip::after { right: 2rem; }
+
+.metrics-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 3rem; 
+    text-align: center; 
+}
+
+.metric-item h3 { 
+    font-size: 2.75rem; 
+    color: var(--white); 
+    margin-bottom: 0.5rem; 
+    font-family: 'Playfair Display', serif; 
+    font-weight: 500;
+}
+
+.metric-item p { 
+    color: var(--antique-gold); 
+    font-weight: 600; 
+    text-transform: uppercase; 
+    letter-spacing: 0.2em; 
+    font-size: 0.75rem; 
+}
+
+/* Gold dividers between metrics */
+.metric-item {
+    position: relative;
+}
+
+.metric-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -1.5rem;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--antique-gold), transparent);
+}
+
+/* ═══════════════════════════════════════════════════════
+   SECTIONS - Temple Chamber Spacing
+   ═══════════════════════════════════════════════════════ */
+.section { padding: 9rem 0; }
+.section-header.center { text-align: center; margin-bottom: 5rem; }
+
+/* Gold ornamental divider for section headers */
+.section-header.center h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--antique-gold), transparent);
+    margin: 1.25rem auto 0;
+}
+
+/* THE FEELING (Solid Teal - Temple Inner Sanctum) */
+.section-feeling { padding: 11rem 0; }
+.section-feeling .display-quote { 
+    font-size: 3.5rem; 
+    font-style: italic; 
+    margin-bottom: 2rem; 
+    color: var(--antique-gold); 
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+/* ═══════════════════════════════════════════════════════
+   SPLIT LAYOUT - Book Preview (Temple Gradient)
+   ═══════════════════════════════════════════════════════ */
+.section-book { padding: 9rem 0; }
+.split-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+
+.check-list { 
+    list-style: none; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 1.25rem; 
+}
+
+.check-list li { 
+    display: flex; 
+    align-items: center; 
+    gap: 16px; 
+    font-size: 1.1rem; 
+}
+
+.check-pill { 
+    background: rgba(240, 230, 210, 0.15); 
+    color: var(--antique-gold); 
+    width: 28px; 
+    height: 28px; 
+    border-radius: 0px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 0.85rem; 
+    border: 1px solid rgba(240, 230, 210, 0.35);
+}
+
+.dark-list .check-pill { 
+    background: rgba(240, 230, 210, 0.1); 
+    color: var(--antique-gold); 
+    border-color: rgba(240, 230, 210, 0.3);
+}
+
+/* ═══════════════════════════════════════════════════════
+   WHY IT MATTERS - Glass Overlay on Temple Photo
+   ═══════════════════════════════════════════════════════ */
+.why-matters-section { position: relative; overflow: hidden; padding: 13rem 0; }
+.bg-img-absolute { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+
+.glass-panel { 
+    background: rgba(245, 245, 245, 0.88); 
+    backdrop-filter: blur(30px); 
+    border: 1px solid rgba(240, 230, 210, 0.3); 
+    border-radius: var(--border-radius-lg); 
+    padding: 6rem 5rem; 
+    box-shadow: 0 30px 70px rgba(128, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Ornamental gold corner accents on glass panel */
+.glass-panel::before,
+.glass-panel::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-color: var(--antique-gold);
+    border-style: solid;
+}
+
+.glass-panel::before {
+    top: -1px;
+    left: -1px;
+    border-width: 2px 0 0 2px;
+}
+
+.glass-panel::after {
+    bottom: -1px;
+    right: -1px;
+    border-width: 0 2px 2px 0;
+}
+
+/* ═══════════════════════════════════════════════════════
+   PROCESS CARDS - Temple Stone Pillars
+   ═══════════════════════════════════════════════════════ */
+.process-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 2.5rem; 
+}
+
+.process-card { 
+    padding: 4rem 3rem; 
+    border-radius: var(--border-radius-lg); 
+    background: var(--white); 
+    border: 1px solid rgba(240, 230, 210, 0.18); 
+    box-shadow: 0 15px 40px rgba(128, 0, 0, 0.03);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Gold top accent bar — like temple pillar crown */
+.process-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--antique-gold), transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.process-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(240, 230, 210, 0.1);
+    border-color: rgba(240, 230, 210, 0.4);
+}
+
+.process-card:hover::before {
+    transform: scaleX(1);
+}
+
+.step-num { 
+    font-size: 0.7rem; 
+    font-weight: 600; 
+    color: var(--antique-gold); 
+    margin-bottom: 1.5rem; 
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+}
+
+.process-card h3 { 
+    font-size: 1.85rem; 
+    margin-bottom: 1rem; 
+    color: var(--deep-teal); 
+    font-weight: 500;
+}
+
+.process-card p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* ═══════════════════════════════════════════════════════
+   BLOG GRID - Palm-Leaf Manuscript Cards
+   ═══════════════════════════════════════════════════════ */
+.blog-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 2.5rem; 
+}
+
+.blog-card { 
+    background: var(--white); 
+    border-radius: var(--border-radius-lg); 
+    overflow: hidden; 
+    border: 1px solid rgba(240, 230, 210, 0.15); 
+    text-decoration: none; 
+    color: inherit; 
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
+    display: block; 
+    box-shadow: 0 10px 30px rgba(128, 0, 0, 0.02);
+}
+
+.blog-card:hover { 
+    transform: translateY(-8px); 
+    box-shadow: 0 30px 60px rgba(240, 230, 210, 0.1); 
+    border-color: rgba(240, 230, 210, 0.35);
+}
+
+.blog-img { 
+    height: 240px; 
+    background-size: cover; 
+    background-position: center; 
+    border-bottom: 2px solid rgba(240, 230, 210, 0.15);
+}
+
+.placeholder-bg { background-color: #e5ebe8; }
+.placeholder-bg2 { background-color: #eddac8; }
+.placeholder-bg3 { background-color: #dfe6e2; }
+
+.blog-content { padding: 2.5rem; }
+.blog-content h3 { 
+    font-size: 1.4rem; 
+    margin-bottom: 0.75rem; 
+    line-height: 1.35; 
+    color: var(--deep-teal); 
+    font-weight: 500;
+}
+
+.read-more { 
+    display: inline-block; 
+    margin-top: 1.5rem; 
+    color: var(--antique-gold); 
+    font-weight: 600; 
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 2px;
+}
+
+.read-more::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--antique-gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover .read-more {
+    color: var(--deep-teal);
+}
+
+.blog-card:hover .read-more::after {
+    transform: scaleX(1);
+}
+
+/* ═══════════════════════════════════════════════════════
+   FAQ & CONTACT - Split Temple Chamber
+   ═══════════════════════════════════════════════════════ */
+.contact-split-section { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+}
+
+.faq-half { 
+    background-color: var(--deep-teal); 
+    color: var(--text-light); 
+    padding: 9rem 5rem 9rem 12%; 
+    position: relative;
+}
+
+/* Ornamental gold border on the dividing edge */
+.faq-half::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 10%;
+    height: 80%;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, var(--antique-gold), transparent);
+}
+
+.faq-half h2 { color: var(--white); }
+
+.form-half { 
+    background-color: var(--bg-base); 
+    padding: 9rem 12% 9rem 5rem; 
+}
+
+/* Accordion */
+.faq-item { 
+    border-bottom: 1px solid rgba(240, 230, 210, 0.2); 
+    padding: 1.75rem 0; 
+}
+
+.faq-question { 
+    width: 100%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    background: none; 
+    border: none; 
+    font-size: 1.15rem; 
+    font-weight: 500; 
+    color: var(--white); 
+    cursor: pointer; 
+    text-align: left; 
+    font-family: inherit; 
+    padding: 0;
+    letter-spacing: 0.02em;
+}
+
+.icon-plus { 
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
+    color: var(--antique-gold); 
+}
+
+.faq-answer { 
+    max-height: 0; 
+    overflow: hidden; 
+    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
+}
+
+.faq-answer p { 
+    padding-top: 1.25rem; 
+    color: rgba(245, 245, 245, 0.7); 
+    font-size: 1.05rem; 
+    line-height: 1.65;
+}
+
+.faq-item.active .icon-plus { transform: rotate(45deg); }
+.faq-item.active .faq-answer { max-height: 250px; }
+
+/* ═══════════════════════════════════════════════════════
+   FORM - Heritage Scroll Aesthetic
+   ═══════════════════════════════════════════════════════ */
+.form-wrapper { 
+    background: var(--white); 
+    padding: 4rem; 
+    border-radius: var(--border-radius-lg); 
+    box-shadow: 0 20px 50px rgba(128, 0, 0, 0.05); 
+    border: 1px solid rgba(240, 230, 210, 0.2);
+    position: relative;
+}
+
+/* Subtle gold top border accent */
+.form-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--antique-gold), transparent);
+}
+
+.form-group { margin-bottom: 1.75rem; }
+
+.form-group label { 
+    display: block; 
+    font-weight: 600; 
+    font-size: 0.8rem; 
+    margin-bottom: 0.6rem; 
+    color: var(--deep-teal); 
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.form-group input, .form-group select, .form-group textarea { 
+    width: 100%; 
+    padding: 1.1rem; 
+    border: 1px solid rgba(240, 230, 210, 0.25); 
+    border-radius: var(--border-radius-md); 
+    background: var(--bg-base); 
+    font-family: inherit; 
+    font-size: 1rem; 
+    transition: all 0.3s ease; 
+    color: var(--text-dark); 
+}
+
+.form-group input::placeholder, .form-group textarea::placeholder {
+    color: rgba(90, 107, 99, 0.5);
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { 
+    outline: none; 
+    border-color: var(--antique-gold); 
+    background-color: var(--white);
+    box-shadow: 0 0 0 3px rgba(240, 230, 210, 0.08);
+}
+
+.whatsapp-box { 
+    margin-top: 2.5rem; 
+    padding-top: 2.5rem; 
+    border-top: 1px solid rgba(240, 230, 210, 0.15); 
+    text-align: center; 
+}
+
+.btn-whatsapp { 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 12px; 
+    margin-top: 1.25rem; 
+    background: #128C7E; 
+    color: white; 
+    padding: 0.9rem 2rem; 
+    border-radius: 0px; 
+    text-decoration: none; 
+    font-weight: 600; 
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: all 0.3s ease; 
+    border: 1px solid #128C7E;
+}
+
+.btn-whatsapp:hover { 
+    background-color: transparent;
+    color: #128C7E;
+    transform: translateY(-3px); 
+    box-shadow: 0 10px 25px rgba(18, 140, 126, 0.2);
+}
+
+/* ═══════════════════════════════════════════════════════
+   THANK YOU PAGE
+   ═══════════════════════════════════════════════════════ */
+.thank-you-section { 
+    min-height: 80vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+}
+
+.check-circle-large { 
+    width: 120px; 
+    height: 120px; 
+    background: var(--deep-teal); 
+    border-radius: 0px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin: 0 auto 2.5rem; 
+    color: white; 
+    border: 2px solid var(--antique-gold);
+}
+
+/* ═══════════════════════════════════════════════════════
+   ARTICLE / STORY - Palm-Leaf Manuscript Style
+   ═══════════════════════════════════════════════════════ */
+.article-hero { 
+    padding: 12rem 0 5rem; 
+    text-align: center; 
+    background: var(--bg-base); 
+}
+
+.article-hero h1 { 
+    font-size: 3.75rem; 
+    max-width: 900px; 
+    margin: 0 auto 1.5rem; 
+    color: var(--deep-teal); 
+    line-height: 1.2;
+}
+
+.article-hero-img { 
+    width: 100%; 
+    height: 520px; 
+    object-fit: cover; 
+    margin-bottom: 5rem; 
+    border-radius: var(--border-radius-lg);
+    border: 1px solid rgba(240, 230, 210, 0.2);
+}
+
+.article-content { 
+    max-width: 720px; 
+    margin: 0 auto; 
+    font-size: 1.2rem; 
+    line-height: 1.85; 
+    color: var(--text-dark); 
+}
+
+.article-content h2 { 
+    font-size: 2.25rem; 
+    margin: 3.5rem 0 1.25rem; 
+    color: var(--deep-teal); 
+}
+
+.article-content p { margin-bottom: 1.75rem; }
+
+.article-content blockquote { 
+    font-family: 'Playfair Display', serif; 
+    font-size: 2rem; 
+    font-style: italic; 
+    border-left: 3px solid var(--antique-gold); 
+    padding-left: 2.5rem; 
+    margin: 4rem 0; 
+    color: var(--deep-teal); 
+    line-height: 1.4;
+}
+
+/* ═══════════════════════════════════════════════════════
+   FOOTER - Temple Plinth (Premium Dark Grid)
+   ═══════════════════════════════════════════════════════ */
+.footer {
+    background-color: #161311; /* Warm dark brown/black */
+    color: #b5a895; /* Soft parchment-like beige */
+    padding: 6rem 0 3rem 0;
+    border-top: 1px solid rgba(240, 230, 210, 0.1);
+    font-family: 'Outfit', sans-serif;
+    text-align: left;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.footer-logo-icon {
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(240, 230, 210, 0.3);
+    color: var(--antique-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(240, 230, 210, 0.05);
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.footer-logo-icon:hover {
+    border-color: var(--antique-gold);
+    background-color: rgba(240, 230, 210, 0.15);
+}
+
+.footer-brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.02em;
+}
+
+.footer-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: rgba(240, 230, 210, 0.65);
+    max-width: 340px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 12px;
+}
+
+.social-box {
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(240, 230, 210, 0.15);
+    color: rgba(240, 230, 210, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    text-decoration: none;
+}
+
+.social-box:hover {
+    color: var(--white);
+    border-color: var(--antique-gold);
+    background-color: rgba(240, 230, 210, 0.05);
+    transform: translateY(-2px);
+}
+
+.footer-heading {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--white);
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.footer-links, .footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-links a, .footer-contact a {
+    color: rgba(240, 230, 210, 0.65);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+.footer-links a:hover, .footer-contact a:hover {
+    color: var(--antique-gold);
+    transform: translateX(3px);
+}
+
+.contact-text {
+    font-size: 0.95rem;
+    color: rgba(240, 230, 210, 0.65);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(240, 230, 210, 0.08);
+    padding-top: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: rgba(240, 230, 210, 0.45);
+}
+
+.footer-bottom-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-bottom-links a {
+    font-size: 0.85rem;
+    color: rgba(240, 230, 210, 0.45);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-bottom-links a:hover {
+    color: var(--antique-gold);
+}
+
+/* Responsiveness for Footer */
+@media (max-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+    .brand-col {
+        grid-column: span 2;
+    }
+    .footer-desc {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    .brand-col {
+        grid-column: span 1;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════
+   CUSTOM SCROLLBAR - Temple Gold Accent
+   ═══════════════════════════════════════════════════════ */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(240, 230, 210, 0.3);
+    border-radius: 0px;
+    border: 2px solid var(--bg-base);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(240, 230, 210, 0.5);
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE DESIGN
+   ═══════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+    .split-layout, .metrics-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .process-grid { grid-template-columns: 1fr; }
+    .contact-split-section { grid-template-columns: 1fr; }
+    .faq-half { padding: 6rem 3rem 6rem 3rem; }
+    .faq-half::after { display: none; }
+    .form-half { padding: 6rem 3rem 6rem 3rem; }
+    h2 { font-size: 2.25rem; }
+    .metric-item:not(:last-child)::after { display: none; }
+}
+
+@media (max-width: 768px) {
+    .hero-content-wrapper h1 { font-size: 3.25rem; }
+    .section-feeling .display-quote { font-size: 2.5rem; }
+    .changing-text { font-size: 1.15rem; }
+    .nav-links { display: none; }
+    .navbar { padding: 1.5rem 2rem; }
+    .section { padding: 6rem 0; }
+    .glass-panel { padding: 4rem 2rem; }
+    .glass-panel::before, .glass-panel::after { width: 20px; height: 20px; }
+    .form-wrapper { padding: 2.5rem 2rem; }
+}
+
+/* ═══════════════════════════════════════════════════════
+   SCROLL TO TOP - Temple Spire Button
+   ═══════════════════════════════════════════════════════ */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 2.5rem;
+    right: 2.5rem;
+    width: 48px;
+    height: 48px;
+    background-color: var(--deep-teal);
+    color: var(--antique-gold);
+    border: 1px solid var(--antique-gold);
+    border-radius: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(128, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 100;
+}
+.scroll-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.scroll-top-btn:hover {
+    background-color: var(--antique-gold);
+    color: var(--deep-teal);
+    border-color: var(--antique-gold);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(240, 230, 210, 0.35);
+}
+
+/* ═══════════════════════════════════════════════════════
+   LUXURY TAMIL CULTURE ADDITIONS
+   ═══════════════════════════════════════════════════════ */
+
+/* Hero Accent Text Contrast */
+.hero-highlight {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 600;
+    color: inherit;
+}
+
+/* Brand Logo Dot */
+.logo-dot {
+    color: var(--antique-gold);
+    font-weight: 700;
+}
+
+/* Ornamental Spacers & Dividers */
+.ornamental-divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 0;
+    width: 100%;
+    background-color: var(--white);
+}
+.ornamental-divider svg {
+    display: block;
+}
+
+.header-divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+.header-divider svg {
+    display: block;
+}
+
+/* Process Icons */
+.process-icon {
+    margin-bottom: 1.5rem;
+    color: var(--antique-gold);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-block;
+}
+.process-card:hover .process-icon {
+    transform: scale(1.15) rotate(-3deg);
+}
+
+/* Museum Double-Border Picture Frame */
+.museum-frame {
+    position: relative;
+    padding: 1.25rem;
+    background-color: var(--white);
+    border: 1px solid rgba(240, 230, 210, 0.25);
+    box-shadow: 0 25px 60px var(--temple-shadow);
+}
+.museum-frame::after {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 1px dashed rgba(240, 230, 210, 0.2);
+    pointer-events: none;
+}
+.museum-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid rgba(240, 230, 210, 0.15);
+}
+
+/* Minimalist Luxury Form Fields */
+.elegant-input {
+    width: 100%;
+    padding: 1.1rem 0.5rem;
+    border: none !important;
+    border-bottom: 1px solid rgba(240, 230, 210, 0.25) !important;
+    border-radius: 0px !important;
+    background: transparent !important;
+    font-family: inherit;
+    font-size: 1.05rem;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    color: var(--text-dark);
+}
+.elegant-input::placeholder {
+    color: rgba(90, 107, 99, 0.4);
+}
+.elegant-input:focus {
+    outline: none !important;
+    border-bottom-color: var(--antique-gold) !important;
+    box-shadow: none !important;
+    background-color: rgba(240, 230, 210, 0.03) !important;
+}
+select.elegant-input {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23B8942B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 0.5rem) center;
+    padding-right: 2rem;
+}
+
