@@ -6,44 +6,44 @@
 */
 
 :root {
-    /* Royal Navy & Gold Luxury Palette - Dark Theme */
-    --bg-base: #06101D;         /* Deepest Navy for background */
-    --deep-teal: #EADBB6;       /* Pale Gold/Cream text */
-    --deep-teal-hover: #FFFFFF;
-    --antique-gold: #D4AF37;    /* Rich Metallic Gold */
-    --antique-gold-hover: #F0E6D2;
+    /* Cream & Bronze Luxury Palette - Light Theme Variant */
+    --bg-base: #FAF7F2;         /* Cream background */
+    --deep-teal: #9C733C;       /* Bronze/Dark Gold (Primary) */
+    --deep-teal-hover: #8A6532;
+    --antique-gold: #B89A6A;    /* Lighter gold/beige for dividers */
+    --antique-gold-hover: #9C733C;
     --white: #FFFFFF;
     
-    /* Variable Aliases to support legacy classes */
+    /* Variable Aliases */
     --primary: var(--deep-teal);
     --secondary: var(--antique-gold);
     --background: var(--bg-base);
     
-    /* Extended Royal Navy Palette */
-    --temple-maroon: #133558;   /* Deep Navy Blue */
-    --aged-bronze: #8B6914;     /* Aged bronze idol tone */
-    --parchment-dark: #122236;  /* Dark navy parchment for borders */
-    --temple-shadow: rgba(0, 0, 0, 0.5);
+    /* Extended Palette */
+    --temple-maroon: #9C733C;   
+    --aged-bronze: #8B6914;     
+    --parchment-dark: #E8E0D5;  
+    --temple-shadow: rgba(156, 115, 60, 0.1);
     
     /* Text Colors */
-    --text-dark: #EADBB6;       /* Pale gold text */
-    --text-muted: #BFA888;      /* Muted gold */
-    --text-light: #F5F5F5;
+    --text-dark: #4A3E31;       
+    --text-muted: #6B5E4F;      
+    --text-light: #FAF7F2;
     
-    /* UI Systems - Sharp Architecture */
-    --border-radius-lg: 4px;    /* Sharp, architectural */
+    /* UI Systems */
+    --border-radius-lg: 4px;    
     --border-radius-md: 2px;
-    --border-radius-pill: 0px;  /* Zero radius for luxury buttons */
+    --border-radius-pill: 0px;  
     
-    /* Aurora Gradient (Atmospheric) */
+    /* Gradients */
     --transparent: rgba(255, 255, 255, 0);
-    --aurora-teal-1: #133558;
-    --aurora-gold-1: #F0E6D2;
-    --aurora-teal-2: #2E8B57;
-    --aurora-gold-2: #245281;
-    --aurora-teal-3: #133558;
+    --aurora-teal-1: rgba(156, 115, 60, 0.03);
+    --aurora-gold-1: rgba(184, 154, 106, 0.03);
+    --aurora-teal-2: rgba(156, 115, 60, 0.03);
+    --aurora-gold-2: rgba(184, 154, 106, 0.03);
+    --aurora-teal-3: rgba(156, 115, 60, 0.03);
     
-    --white-gradient: repeating-linear-gradient(100deg, var(--white) 0%, var(--white) 5%, var(--transparent) 8%, var(--transparent) 10%, var(--white) 15%);
+    --white-gradient: repeating-linear-gradient(100deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.4) 5%, var(--transparent) 8%, var(--transparent) 10%, rgba(255,255,255,0.4) 15%);
     --aurora-gradient: repeating-linear-gradient(100deg, var(--aurora-teal-1) 10%, var(--aurora-gold-1) 15%, var(--aurora-teal-2) 20%, var(--aurora-gold-2) 25%, var(--aurora-teal-3) 30%);
 }
 
@@ -113,15 +113,15 @@ h2 {
 /* Background Utilities */
 .bg-white { background-color: var(--white); }
 .bg-base { background-color: var(--bg-base); }
-.bg-teal-solid { background-color: var(--deep-teal); color: var(--text-light); }
-.bg-teal-solid h2, .bg-teal-solid h3 { color: var(--white); }
-.bg-teal-solid .text-muted { color: rgba(245, 245, 245, 0.7); }
+.bg-teal-solid { background-color: var(--bg-base); color: var(--primary); border-top: 1px solid var(--parchment-dark); border-bottom: 1px solid var(--parchment-dark); }
+.bg-teal-solid h2, .bg-teal-solid h3 { color: var(--primary); }
+.bg-teal-solid .text-muted { color: var(--text-muted); }
 
 .bg-teal-gradient { 
-    background: linear-gradient(135deg, var(--deep-teal) 0%, #06101D 100%); 
-    color: var(--text-light); 
+    background: linear-gradient(135deg, var(--white) 0%, var(--bg-base) 100%); 
+    color: var(--text-dark); 
 }
-.bg-teal-gradient h2, .bg-teal-gradient h3 { color: var(--white); }
+.bg-teal-gradient h2, .bg-teal-gradient h3 { color: var(--primary); }
 
 /* Layout Utilities */
 .container { 
@@ -246,7 +246,7 @@ h2 {
 .btn-primary-sm {
     position: relative;
     background-color: var(--deep-teal); 
-    color: #0B172B !important;
+    color: var(--white) !important;
     padding: 0.75rem 1.75rem; 
     border-radius: 0px;
     font-size: 0.8rem;
@@ -269,7 +269,7 @@ h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #0B172B;
+    background-color: var(--white);
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
@@ -278,9 +278,9 @@ h2 {
 
 .btn-primary-sm:hover {
     color: var(--deep-teal) !important;
-    border-color: #0B172B;
+    border-color: var(--white);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(11, 23, 43, 0.25);
+    box-shadow: 0 8px 25px rgba(156, 115, 60, 0.25);
 }
 
 .btn-primary-sm:hover::before {
@@ -292,7 +292,7 @@ h2 {
 .btn-primary {
     position: relative;
     background-color: var(--deep-teal); 
-    color: #0B172B;
+    color: var(--white);
     padding: 1.15rem 3rem; 
     border-radius: 0px;
     text-decoration: none; 
@@ -315,7 +315,7 @@ h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #0B172B;
+    background-color: var(--white);
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
@@ -324,9 +324,9 @@ h2 {
 
 .btn-primary:hover { 
     color: var(--deep-teal);
-    border-color: #0B172B;
+    border-color: var(--white);
     transform: translateY(-3px); 
-    box-shadow: 0 15px 35px rgba(11, 23, 43, 0.3); 
+    box-shadow: 0 15px 35px rgba(156, 115, 60, 0.3); 
 }
 
 .btn-primary:hover::before {
@@ -505,14 +505,7 @@ h2 {
     line-height: 1.12; 
     margin-bottom: 1.5rem; 
     letter-spacing: -0.01em;
-    background-image: linear-gradient(
-        -45deg, 
-        #0B172B 0%, 
-        #0B172B 35%, 
-        #274370 50%, 
-        #0B172B 65%, 
-        #0B172B 100%
-    );
+    background-image: linear-gradient(-45deg, var(--primary) 0%, var(--primary) 35%, var(--antique-gold) 50%, var(--primary) 65%, var(--primary) 100%);
     background-size: 200% auto;
     color: transparent;
     -webkit-background-clip: text;
@@ -542,7 +535,7 @@ h2 {
     position: absolute; 
     font-size: 1.3rem; 
     font-weight: 300; 
-    color: #FFF2CD; /* Changed from black to pale gold for contrast */
+    color: var(--primary); /* Updated to primary for light theme */
     opacity: 0; 
     transform: translateY(15px); 
     transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); 
@@ -560,10 +553,10 @@ h2 {
    METRICS STRIP - Temple Inscription Band
    ═══════════════════════════════════════════════════════ */
 .metrics-strip { 
-    background: var(--deep-teal); 
+    background: var(--white); 
     padding: 4.5rem 0; 
-    border-top: 2px solid var(--antique-gold); 
-    border-bottom: 2px solid var(--antique-gold); 
+    border-top: 1px solid var(--parchment-dark); 
+    border-bottom: 1px solid var(--parchment-dark); 
     position: relative;
 }
 
@@ -591,14 +584,14 @@ h2 {
 
 .metric-item h3 { 
     font-size: 2.75rem; 
-    color: var(--white); 
+    color: var(--primary); 
     margin-bottom: 0.5rem; 
     font-family: 'Playfair Display', serif; 
     font-weight: 500;
 }
 
 .metric-item p { 
-    color: var(--antique-gold); 
+    color: var(--text-muted); 
     font-weight: 600; 
     text-transform: uppercase; 
     letter-spacing: 0.2em; 
