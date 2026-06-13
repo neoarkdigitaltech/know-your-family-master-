@@ -168,8 +168,12 @@ h2 {
     font-weight: 700; 
     font-size: 1.5rem; 
     letter-spacing: 0.05em; 
-    color: var(--deep-teal); 
+    color: #122135; /* Dark deep teal by default for readability on light pages */
     text-decoration: none;
+}
+
+.logo-dot {
+    color: #d3b664; /* Golden dot for the logo */
 }
 
 .nav-links { 
@@ -180,14 +184,23 @@ h2 {
 
 .nav-links a:not(.btn-primary-sm) { 
     text-decoration: none; 
-    color: var(--deep-teal); 
-    font-weight: 500; 
+    color: #122135; /* Dark deep teal by default */
+    font-weight: 600; 
     font-size: 0.9rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     position: relative;
     padding: 0.25rem 0;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Light text modifier for navbars over dark backgrounds (like the hero section) */
+.navbar.navbar-light-text .logo {
+    color: #F8F4E6;
+}
+
+.navbar.navbar-light-text .nav-links a:not(.btn-primary-sm) {
+    color: #F8F4E6;
 }
 
 .nav-links a:not(.btn-primary-sm)::before {
@@ -245,47 +258,37 @@ h2 {
 /* Contact Us - Nav Button */
 .btn-primary-sm {
     position: relative;
-    background-color: var(--deep-teal); 
-    color: var(--white) !important;
+    background: linear-gradient(135deg, #d3b664 0%, #a48239 100%);
+    color: #2b1f0a !important;
     padding: 0.75rem 1.75rem; 
-    border-radius: 0px;
+    border-radius: 4px;
     font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.18em;
-    border: 1px solid var(--deep-teal);
-    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    border: none;
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.5), 0 5px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
     cursor: pointer;
     display: inline-block;
     z-index: 1;
-    overflow: hidden;
     text-decoration: none;
 }
 
-.btn-primary-sm::before {
+.btn-primary-sm::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--white);
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-    z-index: -1;
+    top: 2px; left: 2px; right: 2px; bottom: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 2px;
+    pointer-events: none;
 }
 
 .btn-primary-sm:hover {
-    color: var(--deep-teal) !important;
-    border-color: var(--white);
+    color: #2b1f0a !important;
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(156, 115, 60, 0.25);
-}
-
-.btn-primary-sm:hover::before {
-    transform: scaleX(1);
-    transform-origin: left;
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.6), 0 10px 25px rgba(0,0,0,0.4);
+    background: linear-gradient(135deg, #dfc06d 0%, #b38f42 100%);
 }
 
 /* Primary CTA - Start My Legacy */
@@ -500,25 +503,87 @@ h2 {
     padding: 0 2.5rem; 
 }
 
-.hero-content-wrapper h1 { 
-    font-size: 4.75rem; 
-    line-height: 1.12; 
+.hero-content-wrapper h1.hero-title-dark { 
+    font-size: 5rem; 
+    line-height: 1.1; 
     margin-bottom: 1.5rem; 
-    letter-spacing: -0.01em;
-    background-image: linear-gradient(-45deg, var(--primary) 0%, var(--primary) 35%, var(--antique-gold) 50%, var(--primary) 65%, var(--primary) 100%);
+    letter-spacing: 0.01em;
+    font-weight: 600;
+    filter: drop-shadow(0px 2px 5px rgba(255, 255, 255, 0.4));
+    
+    /* Blue Shimmer Color Animation */
+    background-image: linear-gradient(-45deg, #122135 0%, #122135 35%, #4a75a8 50%, #122135 65%, #122135 100%);
     background-size: 200% auto;
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: textFlowInside 4s linear infinite;
-    filter: drop-shadow(0px 2px 8px rgba(255, 255, 255, 0.15));
+    animation: blueShimmerFlow 4s linear infinite;
 }
 
-@keyframes textFlowInside {
+@keyframes blueShimmerFlow {
     to {
         background-position: 200% center;
     }
+}
+
+.blink-cursor {
+    font-weight: 300;
+    font-size: 5rem;
+    color: #122135;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Light text for subheadline */
+.changing-text-container.light-text .changing-text {
+    color: #F8F4E6; /* Light ivory text */
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+/* Gold Stamp Button (Main CTA) */
+.hero-tamil-stamp {
+    margin-top: 1.5rem;
+    display: inline-block;
+    background: linear-gradient(135deg, #d3b664 0%, #a48239 100%);
+    padding: 0.8rem 3rem;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.5), 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.hero-tamil-stamp:hover {
+    transform: translateY(-2px);
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.6), 0 10px 25px rgba(0,0,0,0.4);
+    background: linear-gradient(135deg, #dfc06d 0%, #b38f42 100%);
+}
+
+.hero-tamil-stamp::before {
+    content: '';
+    position: absolute;
+    top: 3px; left: 3px; right: 3px; bottom: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 2px;
+    pointer-events: none;
+}
+
+.hero-tamil-stamp .stamp-text {
+    color: #2b1f0a;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 /* Changing Text */

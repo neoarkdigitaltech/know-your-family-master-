@@ -2,10 +2,45 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Hero Entrance Animation
 window.addEventListener('load', () => {
-    gsap.fromTo('.gs-fade-up', 
+    // Fade up the general wrapper but wait for title
+    gsap.fromTo('.gs-fade-up > *:not(.hero-title-dark)', 
         { y: 40, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, ease: "power2.out", delay: 0.2 }
+        { y: 0, opacity: 1, duration: 0.8, ease: "power2.out", delay: 0.8, stagger: 0.2 }
     );
+
+    // Letter-by-letter animation for the main title
+    const title = document.querySelector('.hero-title-dark');
+    if (title) {
+        const nodes = Array.from(title.childNodes);
+        title.innerHTML = '';
+        
+        nodes.forEach(node => {
+            if (node.nodeType === 3) { // Text node
+                const chars = node.nodeValue.split('');
+                chars.forEach(char => {
+                    if (char === ' ') {
+                        title.innerHTML += ' ';
+                    } else {
+                        title.innerHTML += `<span class="char" style="opacity:0;">${char}</span>`;
+                    }
+                });
+            } else if (node.nodeName === 'BR') {
+                title.appendChild(node.cloneNode());
+            }
+        });
+
+        // Add a blinking cursor at the end
+        title.innerHTML += `<span class="blink-cursor">|</span>`;
+
+        // GSAP Animate letters (typing effect)
+        gsap.to('.hero-title-dark .char', {
+            opacity: 1,
+            duration: 0.05,
+            stagger: 0.08,
+            ease: "none",
+            delay: 0.2
+        });
+    }
 });
 
 // Changing Text Logic (Aurora Demo replication)
