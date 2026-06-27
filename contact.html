@@ -10,30 +10,34 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="navbar" style="position: static; background: var(--primary); border-bottom: 1px solid rgba(255,255,255,0.1);">
-        <a href="index.html" class="logo" style="color: var(--background);">Know Your Family</a>
+    <nav class="navbar" style="position: static; background: var(--white); border-bottom: 1px solid rgba(0,0,0,0.05);">
+        <a href="index.html" class="logo">Know Your Family</a>
+        <div class="menu-toggle"><span></span><span></span><span></span></div>
         <div class="nav-links">
-            <a href="index.html" style="color: var(--background);">Home</a>
-            <a href="about.html" style="color: var(--background);">About Us</a>
-            <a href="services.html" style="color: var(--background);">Services</a>
-            <a href="blog-index.html" style="color: var(--background);">Stories</a>
-            <a href="contact.html" class="btn-gold">Contact Us</a>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="blog-index.html">Stories</a>
+            <a href="data-sheet.html">Data Sheet</a>
+            <a href="contact.html" class="btn-primary-sm">Contact Us</a>
         </div>
     </nav>
 
     <main>
-        <!-- CONTACT SPLIT SECTION -->
-        <section class="contact-split-section" style="min-height: calc(100vh - 80px);">
-            
-            <!-- Deep Teal Contact Info Side -->
-            <div class="faq-half" style="display: flex; flex-direction: column; justify-content: center;">
-                <div class="gs-fade">
-                    <span class="tamil-sub" style="color: var(--secondary);">தொடர்பு கொள்ள</span>
-                    <h1 style="font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--background); margin: 0.5rem 0 2rem;">Get in Touch</h1>
-                    
+        <!-- Compact Contact Section -->
+        <section class="section bg-base">
+            <div class="container gs-fade text-center-panel" style="margin-bottom: 4rem;">
+                <span class="tamil-sub" style="color: #142336;">தொடர்பு கொள்ள</span>
+                <h1 class="page-title" style="color: #142336;">Get in Touch</h1>
+                <p class="text-muted" style="max-width: 600px; margin: 1rem auto 0; color: #142336;">We would love to hear your family's story. Reach out to us or drop an inquiry below.</p>
+            </div>
+
+            <div class="container split-layout">
+                <!-- Contact Details Card -->
+                <div class="contact-info-card gs-fade" style="padding: 3rem; background: var(--white); border-radius: var(--border-radius-lg); box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.05);">
                     <div style="margin-bottom: 2rem;">
                         <h3 style="color: var(--secondary); font-size: 1.1rem; margin-bottom: 0.5rem; font-family: 'Outfit', sans-serif;">Office Location</h3>
-                        <p style="color: rgba(240, 234, 214, 0.8); font-size: 1.1rem; line-height: 1.6;">
+                        <p style="color: var(--text-dark); font-size: 1.1rem; line-height: 1.6;">
                             [FILLER - Physical Address Line 1]<br>
                             [FILLER - City, State, ZIP]<br>
                             Malaysia
@@ -42,46 +46,44 @@
 
                     <div style="margin-bottom: 2rem;">
                         <h3 style="color: var(--secondary); font-size: 1.1rem; margin-bottom: 0.5rem; font-family: 'Outfit', sans-serif;">Direct Line</h3>
-                        <p style="color: rgba(240, 234, 214, 0.8); font-size: 1.1rem;">[FILLER - Phone Number]</p>
+                        <p style="color: var(--text-dark); font-size: 1.1rem;">[FILLER - Phone Number]</p>
                     </div>
 
                     <div style="margin-bottom: 2rem;">
                         <h3 style="color: var(--secondary); font-size: 1.1rem; margin-bottom: 0.5rem; font-family: 'Outfit', sans-serif;">Social Media</h3>
                         <div style="display: flex; gap: 1rem;">
-                            <a href="#" style="color: var(--background); text-decoration: none;">[FILLER - Instagram]</a>
-                            <a href="#" style="color: var(--background); text-decoration: none;">[FILLER - Facebook]</a>
+                            <a href="#" style="color: var(--primary); font-weight: 500; text-decoration: none;">[FILLER - Instagram]</a>
+                            <a href="#" style="color: var(--primary); font-weight: 500; text-decoration: none;">[FILLER - Facebook]</a>
                         </div>
                     </div>
 
-                    <a href="#" class="btn-whatsapp" style="margin-top: 1rem;">
+                    <a href="#" class="btn-whatsapp" style="margin-top: 1rem; width: 100%; justify-content: center;">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 0C5.383 0 0 5.383 0 12.031c0 2.12.553 4.184 1.603 6.002L.15 23.46l5.568-1.46A12.022 12.022 0 0012.031 24c6.647 0 12.03-5.383 12.03-12.031C24.06 5.383 18.678 0 12.031 0zm0 21.996c-1.785 0-3.53-.478-5.06-1.385l-.362-.215-3.763.987.996-3.668-.236-.375a10.021 10.021 0 01-1.545-5.309c0-5.545 4.512-10.057 10.057-10.057 5.545 0 10.056 4.512 10.056 10.057 0 5.545-4.511 10.056-10.056 10.056z"/></svg>
                         [FILLER - WhatsApp]
                     </a>
                 </div>
-            </div>
-            
-            <!-- Off White Form Side -->
-            <div class="form-half bg-base" style="display: flex; flex-direction: column; justify-content: center;">
-                <div class="form-wrapper gs-fade" style="box-shadow: 0 20px 50px rgba(47, 133, 90,0.1);">
+                
+                <!-- Inquiry Form -->
+                <div class="form-wrapper gs-fade" style="padding: 3rem; background: var(--white); box-shadow: 0 20px 50px rgba(0,0,0,0.08); border-radius: var(--border-radius-lg); border: 1px solid rgba(0,0,0,0.05);">
                     <h2 style="color: var(--primary);">Send an Inquiry</h2>
                     <p class="text-muted mb-4">Fill out the form below and we will contact you within 24 hours.</p>
                     
                     <form id="inquiry-form" action="thank-you.html">
                         <div class="form-group">
                             <label>Full Name</label>
-                            <input type="text" placeholder="Karthik" required>
+                            <input type="text" placeholder="Karthik" required class="elegant-input">
                         </div>
                         <div class="form-group">
                             <label>Email Address</label>
-                            <input type="email" placeholder="you@example.com" required>
+                            <input type="email" placeholder="you@example.com" required class="elegant-input">
                         </div>
                         <div class="form-group">
                             <label>Phone Number</label>
-                            <input type="tel" placeholder="+60 12 345 6789" required>
+                            <input type="tel" placeholder="+60 12 345 6789" required class="elegant-input">
                         </div>
                         <div class="form-group">
                             <label>Message</label>
-                            <textarea rows="4" placeholder="Tell us a little about your family..." required></textarea>
+                            <textarea rows="4" placeholder="Tell us a little about your family..." required class="elegant-input"></textarea>
                         </div>
                         <button type="submit" class="btn-primary w-100 mt-4">Send Message</button>
                     </form>
@@ -156,8 +158,11 @@
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
+
+
+

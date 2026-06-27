@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Tiro+Tamil:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,23 +15,29 @@
     <!-- Navbar -->
     <nav class="navbar navbar-light-text">
         <a href="index.html" class="logo">Know Your Family<span class="logo-dot">.</span></a>
+        <div class="menu-toggle"><span></span><span></span><span></span></div>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
             <a href="services.html">Services</a>
             <a href="blog-index.html">Stories</a>
+            <a href="data-sheet.html">Data Sheet</a>
             <a href="contact.html" class="btn-primary-sm">Contact Us</a>
         </div>
     </nav>
 
     <!-- AURORA HERO SECTION -->
     <main>
-        <section class="aurora-hero">
+        <section class="aurora-hero" style="position: relative;">
             <div class="aurora-layer"></div>
             <div class="line-grid-overlay"></div>
             
+            <!-- Traditional Corner Accents -->
+            <img src="images/kolam-corner.png" class="corner-kolam top-left" alt="Kolam">
+            <img src="images/kolam-corner.png" class="corner-kolam top-right" alt="Kolam">
+            
             <div class="hero-content-wrapper gs-fade-up">
-                <h1 class="hero-title-dark">Your Roots Are Still<br>Waiting For You.</h1>
+                <h1 class="hero-title-dark" style="color: var(--primary);">Your Roots Are Still<br>Waiting For You.</h1>
                 
                 <div class="changing-text-container light-text">
                     <div class="changing-text active">Before the memories fade away.</div>
@@ -42,6 +49,9 @@
                     <span class="stamp-text">START MY LEGACY</span>
                 </a>
             </div>
+            
+            <!-- Grand Gopuram Focus -->
+            <img src="images/gopuram-hero.png" alt="Temple Gopuram" class="hero-gopuram">
         </section>
     </main>
 
@@ -64,21 +74,27 @@
     </section>
 
     <!-- ORNAMENTAL DIVIDER -->
-    <div class="ornamental-divider gs-fade">
-        <svg width="160" height="24" viewBox="0 0 160 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M80 2L84 8H76L80 2Z" fill="var(--secondary)"/>
-            <line x1="10" y1="12" x2="65" y2="12" stroke="var(--secondary)" stroke-width="1.5" stroke-opacity="0.4"/>
-            <line x1="95" y1="12" x2="150" y2="12" stroke="var(--secondary)" stroke-width="1.5" stroke-opacity="0.4"/>
-            <circle cx="80" cy="12" r="3" stroke="var(--secondary)" stroke-width="1.5"/>
-            <circle cx="80" cy="12" r="7" stroke="var(--secondary)" stroke-width="1" stroke-dasharray="3 3"/>
-        </svg>
+    <div class="gs-fade">
+        <div class="diya-divider">
+            <div class="diya-line"></div>
+            <img src="images/diya.png" alt="Traditional Brass Lamp" class="diya-img" loading="lazy">
+            <div class="diya-line"></div>
+        </div>
     </div>
 
     <!-- SECTION 2: THE FEELING (Solid Deep Teal) -->
-    <section class="section section-feeling bg-teal-solid">
-        <div class="container text-center-panel gs-fade">
+    <section class="section section-feeling bg-teal-solid" style="position: relative;">
+        <!-- Traditional Corner Accents for Section 2 -->
+        <img src="images/kolam-corner.png" class="corner-kolam bottom-left" alt="Kolam" loading="lazy">
+        <img src="images/kolam-corner.png" class="corner-kolam bottom-right" alt="Kolam" loading="lazy">
+        
+        <!-- Decorated Horses -->
+        <img src="images/horse-accent.png" class="horse-accent" style="position: absolute; left: 5%; top: 50%; transform: translateY(-50%);" alt="Decorated Horse" loading="lazy">
+        <img src="images/horse-accent.png" class="horse-accent" style="position: absolute; right: 5%; top: 50%; transform: translateY(-50%) scaleX(-1);" alt="Decorated Horse" loading="lazy">
+        
+        <div class="container text-center-panel gs-fade" style="position: relative; z-index: 10;">
             <h2 class="display-quote">"The fading echoes of our past..."</h2>
-            <p class="tamil-sub" style="color: var(--background);">நமது கடந்த காலத்தின் மங்கும் எதிரொலிகள்...</p>
+            <p class="tamil-sub" style="color: var(--secondary);">நமது கடந்த காலத்தின் மங்கும் எதிரொலிகள்...</p>
             <p class="text-muted mt-4" style="font-size: 1.2rem;">For the Tamil diaspora, generations move fast. Names are forgotten. Stories are lost. What will your children know about where they came from?</p>
         </div>
     </section>
@@ -89,12 +105,10 @@
             <div class="section-header center gs-fade">
                 <h2 style="color: var(--primary);">How It Works</h2>
                 <p class="tamil-sub">இது எப்படி வேலை செய்கிறது</p>
-                <div class="header-divider">
-                    <svg width="80" height="16" viewBox="0 0 80 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <line x1="0" y1="8" x2="30" y2="8" stroke="var(--secondary)" stroke-width="1" stroke-opacity="0.4"/>
-                        <line x1="50" y1="8" x2="80" y2="8" stroke="var(--secondary)" stroke-width="1" stroke-opacity="0.4"/>
-                        <polygon points="40,3 45,8 40,13 35,8" fill="var(--secondary)"/>
-                    </svg>
+                <div class="diya-divider">
+                    <div class="diya-line"></div>
+                    <img src="images/diya.png" alt="Diya" class="diya-img" style="height: 40px;" loading="lazy">
+                    <div class="diya-line"></div>
                 </div>
             </div>
             
@@ -178,12 +192,10 @@
             <div class="section-header center gs-fade">
                 <h2 style="color: var(--primary);">Stories & Insights</h2>
                 <p class="tamil-sub">கதைகள் மற்றும் நுண்ணறிவுகள்</p>
-                <div class="header-divider">
-                    <svg width="80" height="16" viewBox="0 0 80 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <line x1="0" y1="8" x2="30" y2="8" stroke="var(--secondary)" stroke-width="1" stroke-opacity="0.4"/>
-                        <line x1="50" y1="8" x2="80" y2="8" stroke="var(--secondary)" stroke-width="1" stroke-opacity="0.4"/>
-                        <polygon points="40,3 45,8 40,13 35,8" fill="var(--secondary)"/>
-                    </svg>
+                <div class="diya-divider">
+                    <div class="diya-line"></div>
+                    <img src="images/diya.png" alt="Diya" class="diya-img" style="height: 40px;" loading="lazy">
+                    <div class="diya-line"></div>
                 </div>
             </div>
             <div class="blog-grid">
@@ -257,10 +269,12 @@
         </div>
         
         <!-- Off White Form Side -->
-        <div class="form-half bg-base" id="contact">
-            <div class="form-wrapper gs-fade">
-                <h2 style="color: var(--primary);">Start Your Legacy</h2>
-                <p class="text-muted mb-4">Fill out the form below and we will contact you within 24 hours.</p>
+        <div class="form-half bg-base" id="contact" style="position: relative;">
+            <img src="images/yali-bg.png" class="yali-bg" alt="Yali Watermark" loading="lazy">
+            <div class="form-wrapper gs-fade" style="position: relative; z-index: 1;">
+                <img src="images/thamboolam.png" alt="Auspicious Thamboolam" class="thamboolam-icon" loading="lazy">
+                <h2 style="color: var(--primary); text-align: center;">Start Your Legacy</h2>
+                <p class="text-muted mb-4" style="text-align: center;">Fill out the form below and we will contact you within 24 hours.</p>
                 
                 <form id="inquiry-form" action="thank-you.html">
                     <div class="form-group">
@@ -352,8 +366,13 @@
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/aayushchouhan24/sheryjs@main/dist/Shery.js" defer></script>
+    <!-- Vanilla Tilt for hover interactions -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
+

@@ -4,96 +4,706 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stories & Insights | Know Your Family</title>
+    <meta name="description" content="Explore compelling stories of Tamil migration, cultural heritage, and family preservation. Read curated editorials from Know Your Family.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Tiro+Tamil:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Tiro+Tamil:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        .category-nav { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 4rem; }
-        .category-pill { padding: 0.8rem 1.5rem; background: var(--white); border: 1px solid rgba(47, 133, 90,0.1); border-radius: var(--border-radius-pill); color: var(--primary); text-decoration: none; font-weight: 500; transition: all 0.2s; }
-        .category-pill:hover, .category-pill.active { background: var(--primary); color: var(--background); box-shadow: 0 5px 15px rgba(47, 133, 90,0.1); }
+        /* ═══ BLOG INDEX - LUXURY STYLES ═══ */
+
+        /* Hero */
+        .blog-hero {
+            position: relative;
+            padding: 9rem 2rem 7rem;
+            text-align: center;
+            overflow: hidden;
+            background: linear-gradient(160deg, #f7f5f0 0%, #ffffff 40%, #faf8f5 70%, #f7f5f0 100%);
+        }
+
+        .blog-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 60%, rgba(179, 139, 58, 0.12) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .blog-hero::after {
+            display: none;
+        }
+
+        .blog-hero-ornament {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent 5%, #b38b3a 20%, #d4af37 35%, #f5d76e 50%, #d4af37 65%, #b38b3a 80%, transparent 95%);
+        }
+
+        .blog-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(179, 139, 58, 0.05);
+            border: 1px solid rgba(179, 139, 58, 0.2);
+            padding: 0.5rem 1.5rem;
+            margin-bottom: 2rem;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #a48239;
+        }
+
+        .blog-hero-badge::before,
+        .blog-hero-badge::after {
+            content: '✦';
+            font-size: 0.5rem;
+            opacity: 0.5;
+        }
+
+        .blog-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: #122135;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .blog-hero h1 span {
+            display: block;
+            font-style: italic;
+            font-weight: 400;
+            font-size: 2.2rem;
+            color: #a48239;
+            margin-top: 0.5rem;
+        }
+
+        .blog-hero-desc {
+            font-size: 1.1rem;
+            color: rgba(18, 33, 53, 0.7);
+            max-width: 550px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .blog-hero-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .blog-hero-divider span {
+            width: 70px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(179, 139, 58, 0.5));
+        }
+
+        .blog-hero-divider span:last-child {
+            background: linear-gradient(90deg, rgba(179, 139, 58, 0.5), transparent);
+        }
+
+        .blog-hero-divider .dot {
+            width: 6px; height: 6px;
+            border: 1px solid rgba(179, 139, 58, 0.5);
+            transform: rotate(45deg);
+        }
+
+        /* Category Navigation */
+        .blog-categories {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            padding: 3rem 2rem 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cat-pill {
+            padding: 0.7rem 1.75rem;
+            background: var(--white);
+            border: 1px solid var(--parchment-dark);
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cat-pill::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #b38b3a, #d4af37);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .cat-pill:hover,
+        .cat-pill.active {
+            color: var(--text-dark);
+            border-color: rgba(179, 139, 58, 0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+        }
+
+        .cat-pill:hover::after,
+        .cat-pill.active::after {
+            transform: scaleX(1);
+        }
+
+        /* Blog Grid */
+        .blog-listing {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem 6rem;
+        }
+
+        /* Featured Post */
+        .featured-post {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 0;
+            background: var(--white);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.03), 0 20px 60px rgba(0,0,0,0.05);
+            margin-bottom: 4rem;
+            text-decoration: none;
+            color: inherit;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+        }
+
+        .featured-post::before {
+            content: '';
+            position: absolute;
+            top: 6px; bottom: 6px; left: 6px; right: 6px;
+            border: 1px solid rgba(179, 139, 58, 0.1);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .featured-post:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.03), 0 30px 80px rgba(0,0,0,0.08);
+        }
+
+        .featured-img {
+            height: 100%;
+            min-height: 420px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(26, 20, 13, 0.1), rgba(26, 20, 13, 0.3));
+            transition: opacity 0.4s ease;
+        }
+
+        .featured-post:hover .featured-img::after {
+            opacity: 0.6;
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 1.5rem; left: 1.5rem;
+            background: linear-gradient(135deg, #d4af37, #a48239);
+            color: #1a140d;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 0.5rem 1.25rem;
+            z-index: 3;
+        }
+
+        .featured-content {
+            padding: 3.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured-cat {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .featured-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.25;
+            margin-bottom: 1.25rem;
+        }
+
+        .featured-excerpt {
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .featured-meta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--parchment-dark);
+        }
+
+        .featured-readmore {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--primary);
+            transition: gap 0.3s ease;
+        }
+
+        .featured-post:hover .featured-readmore {
+            gap: 1.25rem;
+        }
+
+        /* Post Cards Grid */
+        .posts-grid-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .posts-grid-header h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            white-space: nowrap;
+        }
+
+        .posts-grid-header .line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--parchment-dark), transparent);
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .post-card {
+            background: var(--white);
+            text-decoration: none;
+            color: inherit;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+            border: 1px solid rgba(230, 223, 211, 0.6);
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .post-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            border-color: rgba(179, 139, 58, 0.2);
+        }
+
+        .post-card-img {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .post-card-img::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 50%;
+            background: linear-gradient(to top, rgba(26, 20, 13, 0.15), transparent);
+        }
+
+        .post-card:hover .post-card-img {
+            /* subtle zoom */
+        }
+
+        .post-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .post-card:hover .post-card-img img {
+            transform: scale(1.05);
+        }
+
+        .post-card-body {
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .post-card-cat {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .post-card-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.35;
+            margin-bottom: 0.75rem;
+        }
+
+        .post-card-excerpt {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            flex: 1;
+        }
+
+        .post-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--parchment-dark);
+        }
+
+        .post-card-date {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        .post-card-readmore {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+        }
+
+        .post-card:hover .post-card-readmore {
+            gap: 0.85rem;
+        }
+
+        /* Coming Soon Card */
+        .post-card-coming {
+            background: linear-gradient(135deg, rgba(179, 139, 58, 0.04), rgba(250, 248, 245, 1));
+            border: 1px dashed rgba(179, 139, 58, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 380px;
+        }
+
+        .coming-inner {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .coming-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(179, 139, 58, 0.08);
+            border: 1px solid rgba(179, 139, 58, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+            font-size: 1.5rem;
+        }
+
+        .coming-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .coming-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Newsletter CTA */
+        .blog-cta {
+            background: #ffffff;
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .blog-cta-inner {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .blog-cta h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            color: #1a2340;
+            margin-bottom: 1rem;
+        }
+
+        .blog-cta p {
+            color: #4a4a4a;
+            font-size: 1rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        .blog-cta .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #c9a43d, #9c7330);
+            color: #1a140d;
+            padding: 1.1rem 3.5rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .blog-cta .cta-btn::before {
+            content: '';
+            position: absolute;
+            top: 3px; left: 3px; right: 3px; bottom: 3px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            pointer-events: none;
+        }
+
+        .blog-cta .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(164, 130, 57, 0.4);
+        }
+
+        /* Footer */
+        .blog-footer {
+            background: linear-gradient(135deg, #1a140d 0%, #2c1f10 100%);
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 3px solid;
+            border-image: linear-gradient(90deg, transparent, #b38b3a, #d4af37, #b38b3a, transparent) 1;
+        }
+
+        .blog-footer-logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #d4af37;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-footer-copy {
+            font-size: 0.72rem;
+            color: rgba(248, 244, 230, 0.25);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .featured-post { grid-template-columns: 1fr; }
+            .featured-img { min-height: 280px; }
+            .posts-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 640px) {
+            .blog-hero h1 { font-size: 2.8rem; }
+            .blog-hero h1 span { font-size: 1.5rem; }
+            .posts-grid { grid-template-columns: 1fr; }
+            .featured-content { padding: 2rem; }
+            .featured-title { font-size: 1.6rem; }
+        }
+
+        /* Fade-in animation */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(25px);
+            animation: blogFadeUp 0.7s ease forwards;
+        }
+        .fade-up:nth-child(1) { animation-delay: 0.1s; }
+        .fade-up:nth-child(2) { animation-delay: 0.2s; }
+        .fade-up:nth-child(3) { animation-delay: 0.3s; }
+        .fade-up:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes blogFadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
-    <nav class="navbar" style="position: static; background: var(--background); border-bottom: 1px solid rgba(47, 133, 90,0.1);">
-        <a href="index.html" class="logo">Know Your Family</a>
+
+    <!-- Navbar -->
+    <nav class="navbar" style="position: static; background: var(--background); border-bottom: 1px solid var(--parchment-dark);">
+        <a href="index.html" class="logo" style="text-decoration: none; color: var(--primary);">Know Your Family</a>
+        <div class="menu-toggle"><span></span><span></span><span></span></div>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
             <a href="services.html">Services</a>
             <a href="blog-index.html">Stories</a>
+            <a href="data-sheet.html">Data Sheet</a>
             <a href="contact.html" class="btn-primary-sm">Contact Us</a>
         </div>
     </nav>
 
-    <main class="bg-base">
-        <section class="section text-center" style="padding-bottom: 4rem;">
-            <div class="container gs-fade">
-                <h1 style="font-family: 'Playfair Display', serif; font-size: 4rem; color: var(--primary);">Stories & Insights</h1>
-                <p class="text-muted" style="font-size: 1.2rem; margin-top: 1rem;">Exploring Tamil migration, culture, and preservation.</p>
+    <!-- ═══ HERO ═══ -->
+    <section class="blog-hero" style="background: #2C4257;">
+        <h1 style="color: #ffffff;">Stories & Insights <span style="color: #d4af37;">Voices of Tamil Heritage</span></h1>
+        <p class="blog-hero-desc" style="color: rgba(255,255,255,0.85);">Exploring centuries of migration, culture, identity, and the art of preserving family legacies.</p>
+        <div class="blog-hero-divider">
+            <span></span>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <span></span>
+        </div>
+    </section>
+
+    <!-- ═══ CATEGORIES ═══ -->
+    <div class="blog-categories">
+        <a href="#" class="cat-pill active">All Stories</a>
+        <a href="#" class="cat-pill">Tamil Migration</a>
+        <a href="#" class="cat-pill">Cultural Traditions</a>
+        <a href="#" class="cat-pill">Preservation Tips</a>
+        <a href="#" class="cat-pill">Family Stories</a>
+    </div>
+
+    <!-- ═══ BLOG LISTING ═══ -->
+    <main class="blog-listing">
+
+        <!-- Featured Post -->
+        <a href="blog.html" class="featured-post fade-up">
+            <div class="featured-img" style="background-image: url('images/blog_migration.png');">
+                <div class="featured-badge">Featured Story</div>
             </div>
-        </section>
-        
-        <section class="section" style="padding-top: 0;">
-            <div class="container">
-                <!-- Blog Categories -->
-                <div class="category-nav gs-fade">
-                    <a href="#" class="category-pill active">All Stories</a>
-                    <a href="#" class="category-pill">Tamil Migration History</a>
-                    <a href="#" class="category-pill">Cultural Traditions & Festivals</a>
-                    <a href="#" class="category-pill">Family Preservation Tips</a>
-                    <a href="#" class="category-pill">Real Family Stories</a>
+            <div class="featured-content">
+                <span class="featured-cat">Migration History</span>
+                <div class="featured-meta">
+                    <span>By Editorial Team</span>
+                    <span>•</span>
+                    <span>8 min read</span>
+                    <span>•</span>
+                    <span>June 2026</span>
                 </div>
-                
-                <!-- Blog Grid -->
-                <div class="blog-grid">
-                    <a href="blog.html" class="blog-card gs-fade">
-                        <div class="blog-img" style="background-image: url('images/blog_migration.png');"></div>
-                        <div class="blog-content">
-                            <span class="text-gold" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Migration History</span>
-                            <h3 style="margin-top: 0.5rem;">The Story of Tamil Migration to Malaysia</h3>
-                            <p class="text-muted">Discover the historical waves that brought our ancestors across the sea.</p>
-                            <span class="read-more">Read Editorial →</span>
-                        </div>
-                    </a>
-                    
-                    <a href="blog.html" class="blog-card gs-fade">
-                        <div class="blog-img" style="background-image: url('images/blog_generations.png');"></div>
-                        <div class="blog-content">
-                            <span class="text-gold" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Preservation Tips</span>
-                            <h3 style="margin-top: 0.5rem;">Why Younger Generations Are Losing Touch</h3>
-                            <p class="text-muted">And what we can do to bridge the cultural gap.</p>
-                            <span class="read-more">Read Editorial →</span>
-                        </div>
-                    </a>
-                    
-                    <a href="blog.html" class="blog-card gs-fade">
-                        <div class="blog-img" style="background-image: url('images/blog_identity.png');"></div>
-                        <div class="blog-content">
-                            <span class="text-gold" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Cultural Traditions</span>
-                            <h3 style="margin-top: 0.5rem;">What Your Family History Reveals</h3>
-                            <p class="text-muted">How ancestral stories shape our modern identity.</p>
-                            <span class="read-more">Read Editorial →</span>
-                        </div>
-                    </a>
-                    
-                    <!-- Placeholder Card -->
-                    <a href="#" class="blog-card gs-fade">
-                        <div class="blog-img" style="background: rgba(47, 133, 90,0.1); display: flex; align-items: center; justify-content: center;">
-                            <span style="color: var(--primary); font-family: 'Playfair Display', serif; font-size: 1.5rem;">Coming Soon</span>
-                        </div>
-                        <div class="blog-content">
-                            <span class="text-gold" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Real Stories</span>
-                            <h3 style="margin-top: 0.5rem;">[FILLER - Actual Blog Post]</h3>
-                            <p class="text-muted">More incredible family histories will be published here soon.</p>
-                            <span class="read-more">Read Editorial →</span>
-                        </div>
-                    </a>
+                <h2 class="featured-title">The Story of Tamil Migration to Southeast Asia</h2>
+                <p class="featured-excerpt">Discover the historical waves that brought our ancestors across the Indian Ocean — from Chola trade routes to colonial-era labor migration and the modern diaspora.</p>
+                <span class="featured-readmore">Read Full Story →</span>
+            </div>
+        </a>
+
+        <!-- Grid Header -->
+        <div class="posts-grid-header">
+            <h2>Latest Stories</h2>
+            <div class="line"></div>
+        </div>
+
+        <!-- Posts Grid -->
+        <div class="posts-grid">
+
+            <a href="blog.html" class="post-card fade-up">
+                <div class="post-card-img">
+                    <img src="images/blog_generations.png" alt="Generations" loading="lazy">
+                </div>
+                <div class="post-card-body">
+                    <span class="post-card-cat">Preservation Tips</span>
+                    <h3 class="post-card-title">Why Younger Generations Are Losing Touch With Their Roots</h3>
+                    <p class="post-card-excerpt">And what we can do to bridge the cultural gap before living memories fade into silence.</p>
+                    <div class="post-card-footer">
+                        <span class="post-card-date">May 2026</span>
+                        <span class="post-card-readmore">Read →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="blog.html" class="post-card fade-up">
+                <div class="post-card-img">
+                    <img src="images/blog_identity.png" alt="Identity" loading="lazy">
+                </div>
+                <div class="post-card-body">
+                    <span class="post-card-cat">Cultural Traditions</span>
+                    <h3 class="post-card-title">What Your Family History Reveals About Your Identity</h3>
+                    <p class="post-card-excerpt">How ancestral stories shape our modern sense of self, belonging, and purpose.</p>
+                    <div class="post-card-footer">
+                        <span class="post-card-date">April 2026</span>
+                        <span class="post-card-readmore">Read →</span>
+                    </div>
+                </div>
+            </a>
+
+            <div class="post-card post-card-coming fade-up">
+                <div class="coming-inner">
+                    <div class="coming-icon">✦</div>
+                    <h3 class="coming-title">More Stories Coming</h3>
+                    <p class="coming-desc">New heritage stories and family chronicles are being curated and will be published soon.</p>
                 </div>
             </div>
-        </section>
+
+        </div>
     </main>
 
+    <!-- ═══ CTA SECTION ═══ -->
+    <section class="blog-cta">
+        <div class="blog-cta-inner">
+            <h2>Preserve Your Story</h2>
+            <p>Every family has a story worth telling. Let us help you document yours before the memories fade.</p>
+            <a href="data-sheet.html" class="cta-btn">Start Your Heritage Record</a>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
     <footer class="footer">
         <div class="container footer-grid">
             <!-- Brand Column -->
@@ -160,8 +770,5 @@
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>

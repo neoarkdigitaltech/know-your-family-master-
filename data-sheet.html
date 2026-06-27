@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heritage Data Sheet | Know Your Family</title>
+    <meta name="description" content="Begin documenting your family heritage with our luxury archival data sheet. Preserve your Tamil lineage for future generations.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Tiro+Tamil:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ═══════════════════════════════════════════════════════
+           DATA SHEET PAGE - LUXURY OVERRIDES
+           ═══════════════════════════════════════════════════════ */
+
+        /* Hero Banner */
+        .ds-hero {
+            position: relative;
+            padding: 8rem 2rem 6rem;
+            text-align: center;
+            overflow: hidden;
+            background: linear-gradient(160deg, #f7f5f0 0%, #ffffff 40%, #faf8f5 70%, #f7f5f0 100%);
+        }
+
+        .ds-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 30%, rgba(179, 139, 58, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .ds-hero::after {
+            display: none;
+        }
+
+        /* Ornamental top border */
+        .ds-hero-ornament-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent 5%, #b38b3a 20%, #d4af37 35%, #f5d76e 50%, #d4af37 65%, #b38b3a 80%, transparent 95%);
+        }
+
+        .ds-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(179, 139, 58, 0.05);
+            border: 1px solid rgba(179, 139, 58, 0.2);
+            padding: 0.5rem 1.5rem;
+            margin-bottom: 2rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #a48239;
+        }
+
+        .ds-hero-badge::before,
+        .ds-hero-badge::after {
+            content: '✦';
+            font-size: 0.5rem;
+            opacity: 0.6;
+        }
+
+        .ds-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: #122135;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .ds-hero h1 span {
+            display: block;
+            font-style: italic;
+            font-weight: 400;
+            font-size: 2.5rem;
+            color: #a48239;
+            margin-top: 0.25rem;
+        }
+
+        .ds-hero-tamil {
+            font-family: 'Tiro Tamil', serif;
+            color: rgba(179, 139, 58, 0.8);
+            font-size: 1.2rem;
+            letter-spacing: 0.3em;
+            margin-top: 1.5rem;
+        }
+
+        .ds-hero-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .ds-hero-line span {
+            width: 80px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #b38b3a);
+        }
+
+        .ds-hero-line span:last-child {
+            background: linear-gradient(90deg, #b38b3a, transparent);
+        }
+
+        .ds-hero-line svg {
+            width: 24px;
+            height: 24px;
+            fill: #d4af37;
+            opacity: 0.6;
+        }
+
+        /* Page body */
+        .ds-page-body {
+            background: linear-gradient(135deg, #f2f3f8 0%, #fef8f3 100%);
+            padding: 4rem 2rem 6rem;
+            position: relative;
+        }
+
+        /* Progress indicator */
+        .ds-progress {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .ds-progress::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            right: 5%;
+            height: 1px;
+            background: #cbd0d6;
+            z-index: 1;
+        }
+
+        .ds-progress-step {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            position: relative;
+            z-index: 2;
+            background: #f8f6f5; 
+            padding: 0 15px;
+            border-radius: 20px;
+        }
+
+        .ds-progress-dot {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 1px solid #a0aab2;
+            color: #a0aab2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .ds-progress-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #a0aab2;
+            transition: color 0.3s ease;
+        }
+
+        .ds-progress-step.active .ds-progress-dot {
+            border-color: #4b3c9b;
+            color: #4b3c9b;
+            background: #f8f6f5;
+        }
+
+        .ds-progress-step.active .ds-progress-label {
+            color: #4b3c9b;
+        }
+
+        /* Form container luxury overhaul */
+        .ds-form-card {
+            max-width: 960px;
+            margin: 0 auto;
+            position: relative;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .ds-form-card::before, .ds-form-card::after { display: none; }
+        .ds-form-inner { padding: 0; position: relative; z-index: 2; }
+
+        /* Section headers */
+        .ds-section {
+            margin-bottom: 3.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: dsFadeUp 0.6s ease forwards;
+        }
+
+        .ds-section:nth-child(1) { animation-delay: 0.1s; }
+        .ds-section:nth-child(2) { animation-delay: 0.2s; }
+        .ds-section:nth-child(3) { animation-delay: 0.3s; }
+        .ds-section:nth-child(4) { animation-delay: 0.4s; }
+        .ds-section:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes dsFadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .ds-section-header {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--parchment-dark);
+            position: relative;
+        }
+
+        .ds-section-header::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, #b38b3a, transparent);
+        }
+
+        .ds-section-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(179, 139, 58, 0.08), rgba(212, 175, 55, 0.04));
+            border: 1px solid rgba(179, 139, 58, 0.2);
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .ds-section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            letter-spacing: 0.02em;
+        }
+
+        .ds-section-subtitle {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-top: 0.15rem;
+        }
+
+        /* Enhanced form groups */
+        .ds-field {
+            margin-bottom: 1.75rem;
+            position: relative;
+        }
+
+        .ds-field-label {
+            display: flex;
+            align-items: center;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #888;
+            margin-bottom: 0.4rem;
+        }
+
+        .ds-input {
+            width: 100%;
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            color: var(--text-dark);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            padding: 0.95rem 1.2rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .ds-input:focus {
+            outline: none;
+            border-color: #4b3c9b;
+            box-shadow: 0 0 0 2px rgba(75, 60, 155, 0.1);
+        }
+
+        .ds-input::placeholder {
+            color: rgba(107, 92, 75, 0.4);
+        }
+
+        .ds-select {
+            width: 100%;
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            color: var(--text-dark);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            padding: 0.95rem 1.2rem;
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23b38b3a%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1.2rem top 50%;
+            background-size: 0.65em auto;
+            transition: all 0.3s ease;
+        }
+
+        .ds-select:focus {
+            outline: none;
+            border-color: #4b3c9b;
+            box-shadow: 0 0 0 2px rgba(75, 60, 155, 0.1);
+        }
+
+        .ds-textarea {
+            width: 100%;
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            color: var(--text-dark);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            padding: 0.95rem 1.2rem;
+            min-height: 110px;
+            resize: vertical;
+            transition: all 0.3s ease;
+        }
+
+        .ds-textarea:focus {
+            outline: none;
+            border-color: #4b3c9b;
+            box-shadow: 0 0 0 2px rgba(75, 60, 155, 0.1);
+        }
+
+        /* Wizard Specific CSS */
+        .wizard-step {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+        .wizard-step.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .wizard-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 3rem;
+            padding-bottom: 2rem;
+        }
+
+        .wizard-btn {
+            background: #4b3c9b;
+            color: white;
+            padding: 0.85rem 3rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 500;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .wizard-btn:hover { background: #3a2e7c; transform: translateY(-2px); box-shadow: 0 4px 15px rgba(75, 60, 155, 0.3); }
+        .wizard-btn.btn-prev { background: transparent; color: #4b3c9b; border: 1px solid #4b3c9b; }
+        .wizard-btn.btn-prev:hover { background: rgba(75, 60, 155, 0.05); }
+
+        /* Grid layouts */
+        .ds-row { display: grid; gap: 1.5rem; }
+        .ds-row-2 { grid-template-columns: 1fr 1fr; }
+        .ds-row-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+        /* Ornamental divider between sections */
+        .ds-ornament-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 2rem 0;
+        }
+
+        .ds-ornament-divider .line {
+            height: 1px;
+            width: 60px;
+            background: linear-gradient(90deg, transparent, rgba(179, 139, 58, 0.4));
+        }
+
+        .ds-ornament-divider .line:last-child {
+            background: linear-gradient(90deg, rgba(179, 139, 58, 0.4), transparent);
+        }
+
+        .ds-ornament-divider .diamond {
+            width: 8px;
+            height: 8px;
+            border: 1px solid rgba(179, 139, 58, 0.4);
+            transform: rotate(45deg);
+        }
+
+        /* Terms & Declaration */
+        .ds-terms {
+            background: linear-gradient(135deg, #f7f3ec, #faf8f5);
+            border: 1px solid var(--parchment-dark);
+            padding: 2.5rem;
+            margin-top: 2rem;
+            position: relative;
+        }
+
+        .ds-terms::before {
+            content: '';
+            position: absolute;
+            top: 4px; left: 4px; right: 4px; bottom: 4px;
+            border: 1px solid rgba(179, 139, 58, 0.12);
+            pointer-events: none;
+        }
+
+        .ds-terms-header {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .ds-terms-header::before {
+            content: '§';
+            font-size: 1.4rem;
+            color: var(--primary);
+        }
+
+        .ds-terms p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.9;
+        }
+
+        .ds-terms .inline-input {
+            border: none;
+            border-bottom: 1px solid rgba(179, 139, 58, 0.5);
+            background: transparent;
+            width: 140px;
+            text-align: center;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.88rem;
+            color: var(--text-dark);
+            padding: 0.15rem 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .ds-terms .inline-input:focus {
+            outline: none;
+            border-bottom-color: #b38b3a;
+            background: rgba(179, 139, 58, 0.04);
+        }
+
+        .ds-checkbox-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--parchment-dark);
+        }
+
+        .ds-checkbox {
+            appearance: none;
+            width: 22px;
+            height: 22px;
+            border: 2px solid rgba(179, 139, 58, 0.4);
+            background: #fff;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-top: 2px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .ds-checkbox:checked {
+            background: linear-gradient(135deg, #d4af37, #a48239);
+            border-color: #b38b3a;
+        }
+
+        .ds-checkbox:checked::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .ds-checkbox-text {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            cursor: pointer;
+            line-height: 1.6;
+        }
+
+        /* Upload boxes */
+        .ds-upload-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .ds-upload-box {
+            border: 2px dashed rgba(179, 139, 58, 0.25);
+            background: linear-gradient(135deg, rgba(250, 248, 245, 0.8), rgba(255, 255, 255, 0.5));
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ds-upload-box::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(179, 139, 58, 0.05), transparent 70%);
+            transition: opacity 0.4s ease;
+            opacity: 0;
+        }
+
+        .ds-upload-box:hover {
+            border-color: rgba(179, 139, 58, 0.5);
+            background: linear-gradient(135deg, rgba(179, 139, 58, 0.04), rgba(255, 255, 255, 0.8));
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+        }
+
+        .ds-upload-box:hover::before {
+            opacity: 1;
+        }
+
+        .ds-upload-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(179, 139, 58, 0.1), rgba(212, 175, 55, 0.05));
+            border: 1px solid rgba(179, 139, 58, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .ds-upload-title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .ds-upload-desc {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Submit section */
+        .ds-submit-section {
+            text-align: center;
+            padding: 3.5rem 0 1rem;
+        }
+
+        .ds-submit-btn {
+            position: relative;
+            display: inline-block;
+            background: linear-gradient(135deg, #c9a43d 0%, #9c7330 100%);
+            color: #1a140d;
+            padding: 1.25rem 4.5rem;
+            border: none;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 4px 15px rgba(164, 130, 57, 0.3);
+        }
+
+        .ds-submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 3px; left: 3px; right: 3px; bottom: 3px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            pointer-events: none;
+        }
+
+        .ds-submit-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .ds-submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(164, 130, 57, 0.4);
+            background: linear-gradient(135deg, #d4af37 0%, #a48239 100%);
+        }
+
+        .ds-submit-btn:hover::after {
+            left: 100%;
+        }
+
+        .ds-submit-note {
+            margin-top: 1rem;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        /* Luxury footer */
+        .ds-footer {
+            background: linear-gradient(135deg, #1a140d 0%, #2c1f10 100%);
+            text-align: center;
+            padding: 5rem 2rem;
+            position: relative;
+        }
+
+        .ds-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #b38b3a, #d4af37, #b38b3a, transparent);
+        }
+
+        .ds-footer-logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #d4af37;
+            margin-bottom: 0.75rem;
+        }
+
+        .ds-footer-tagline {
+            font-family: 'Tiro Tamil', serif;
+            color: rgba(248, 244, 230, 0.4);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .ds-footer-copy {
+            font-size: 0.75rem;
+            color: rgba(248, 244, 230, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .ds-hero { padding: 6rem 1.5rem 4rem; }
+            .ds-hero h1 { font-size: 2.5rem; }
+            .ds-hero h1 span { font-size: 1.5rem; }
+            .ds-form-inner { padding: 2rem 1.5rem; }
+            .ds-row-2, .ds-row-3 { grid-template-columns: 1fr; }
+            .ds-upload-row { grid-template-columns: 1fr; }
+            .ds-progress { gap: 0; margin: -1.5rem auto 2.5rem; }
+            .ds-progress-label { font-size: 0.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Static Navbar -->
+    <nav class="navbar" style="position: static; background: var(--background); border-bottom: 1px solid var(--parchment-dark);">
+        <a href="index.html" class="logo" style="text-decoration: none; color: var(--primary);">Know Your Family</a>
+        <div class="menu-toggle"><span></span><span></span><span></span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="blog-index.html">Stories</a>
+            <a href="data-sheet.html">Data Sheet</a>
+            <a href="contact.html" class="btn-primary-sm">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- ═══ HERO BANNER ═══ -->
+    <section class="ds-hero" style="background: #2C4257;">
+        <h1 style="color: #ffffff;">Know Your Family <span style="color: #d4af37;">Data Sheet</span></h1>
+        <p class="ds-hero-tamil" style="color: rgba(255,255,255,0.8);">குடும்ப மரபு பதிவேடு</p>
+        <div class="ds-hero-line">
+            <span style="background: rgba(255,255,255,0.2);"></span>
+            <svg viewBox="0 0 24 24" style="fill: #d4af37;"><path d="M12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2Z"/></svg>
+            <span style="background: rgba(255,255,255,0.2);"></span>
+        </div>
+    </section>
+
+    <!-- ═══ PAGE BODY ═══ -->
+    <div class="ds-page-body">
+
+        <!-- Progress Steps -->
+        <div class="ds-progress">
+            <div class="ds-progress-step active" id="step-nav-1">
+                <div class="ds-progress-dot">1</div>
+                <span class="ds-progress-label">Personal Info</span>
+            </div>
+            <div class="ds-progress-step" id="step-nav-2">
+                <div class="ds-progress-dot">2</div>
+                <span class="ds-progress-label">Ancestry</span>
+            </div>
+            <div class="ds-progress-step" id="step-nav-3">
+                <div class="ds-progress-dot">3</div>
+                <span class="ds-progress-label">Migration</span>
+            </div>
+            <div class="ds-progress-step" id="step-nav-4">
+                <div class="ds-progress-dot">4</div>
+                <span class="ds-progress-label">Education</span>
+            </div>
+            <div class="ds-progress-step" id="step-nav-5">
+                <div class="ds-progress-dot">5</div>
+                <span class="ds-progress-label">Declaration</span>
+            </div>
+        </div>
+
+        <!-- ═══ FORM ═══ -->
+        <div class="ds-form-card">
+            <div class="ds-form-inner">
+                <form action="#" method="POST" id="heritage-form">
+
+                    <!-- WIZARD CONTAINER -->
+
+                        <!-- ═══ SECTION 1: PERSONAL DETAILS ═══ -->
+                        <div class="wizard-step active" id="wizard-step-1">
+                            <div class="wizard-content">
+                                <div class="ds-row ds-row-3">
+                                    <div class="ds-field">
+                                        <label class="ds-field-label">1. Full Name (Mr / Mrs / Ms) *</label>
+                                        <input type="text" class="ds-input" placeholder="e.g., Mr. Karthikeyan Murugan">
+                                    </div>
+                                    <div class="ds-field">
+                                        <label class="ds-field-label">2. Usually Called As (Nickname)</label>
+                                        <input type="text" class="ds-input" placeholder="e.g., Karthi">
+                                    </div>
+                                    <div class="ds-field">
+                                        <label class="ds-field-label">3. Male / Female</label>
+                                        <select class="ds-select"><option value="">Select</option><option>Male</option><option>Female</option></select>
+                                    </div>
+                                </div>
+
+                                <div class="ds-row ds-row-3">
+                                    <div class="ds-field">
+                                        <label class="ds-field-label">4. Alive / Not Alive</label>
+                                        <select class="ds-select"><option value="">Select</option><option>Alive</option><option>Not Alive</option></select>
+                                    </div>
+                                    <div class="ds-field" style="position: relative;">
+                                        <label class="ds-field-label">5. Date of Birth</label>
+                                        <input type="text" class="ds-input" placeholder="dd-mm-yyyy" style="padding-right: 35px;">
+                                        <span style="position: absolute; right: 10px; top: 38px; color: #555;">📅</span>
+                                    </div>
+                                    <div class="ds-field" style="position: relative;">
+                                        <label class="ds-field-label">20. Time of Birth</label>
+                                        <input type="text" class="ds-input" placeholder="--:--" style="padding-right: 35px;">
+                                        <span style="position: absolute; right: 10px; top: 38px; color: #555;">🕒</span>
+                                    </div>
+                                </div>
+
+                                <div class="ds-row ds-row-3">
+                                    <div class="ds-field">
+                                        <label class="ds-field-label">19. Place & Country of Birth</label>
+                                        <input type="text" class="ds-input" placeholder="e.g., Madurai, Tamil Nadu, India">
+                                    </div>
+                                    <div class="ds-field">
+                                        <label class="ds-field-label">24. Sun Sign / நட்சத்திரம்</label>
+                                        <input type="text" class="ds-input" placeholder="e.g., Leo / சிம்மம்">
+                                    </div>
+                                    <div class="ds-field">
+                                        <label class="ds-field-label">18. Present Citizenship</label>
+                                        <input type="text" class="ds-input" placeholder="e.g., Indian">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ═══ SECTION 2: ANCESTRY & LINEAGE ═══ -->
+                        <div class="wizard-step" id="wizard-step-2">
+                            <div class="wizard-content">
+                                <div class="ds-row ds-row-2">
+                                    <div class="ds-field">
+                                        <label class="ds-field-label">6. Family Name</label>
+                                        <input type="text" class="ds-input" placeholder="Surname / Clan name">
+                                    </div>
+                                    <div class="ds-field">
+                                        <label class="ds-field-label">7. Patriarchal / Matriarchal Family</label>
+                                        <input type="text" class="ds-input">
+                                    </div>
+                                </div>
+                                <div class="ds-field">
+                                    <label class="ds-field-label">8. Ancestral Place</label>
+                                    <input type="text" class="ds-input" placeholder="Village, town, or district of origin">
+                                </div>
+                                <div class="ds-row ds-row-2">
+                                    <div class="ds-field">
+                                        <label class="ds-field-label">9. Family God / Church / Religious Affiliations</label>
+                                        <input type="text" class="ds-input">
+                                    </div>
+                                    <div class="ds-field">
+                                        <label class="ds-field-label">10. Mother Tongue</label>
+                                        <input type="text" class="ds-input">
+                                    </div>
+                                </div>
+                                <div class="ds-row ds-row-2">
+                                    <div class="ds-field">
+                                        <label class="ds-field-label">11. Race / Division</label>
+                                        <input type="text" class="ds-input">
+                                    </div>
+                                    <div class="ds-field">
+                                        <label class="ds-field-label">12. Sub-Division / Mixed Origin Details</label>
+                                        <input type="text" class="ds-input" placeholder="If applicable">
+                                    </div>
+                                </div>
+                                <div class="ds-row ds-row-2">
+                                    <div class="ds-field">
+                                        <label class="ds-field-label">13. Father's Name</label>
+                                        <input type="text" class="ds-input">
+                                    </div>
+                                    <div class="ds-field">
+                                        <label class="ds-field-label">14. Mother's Name</label>
+                                        <input type="text" class="ds-input">
+                                    </div>
+                                </div>
+                                <div class="ds-row ds-row-2">
+                                    <div class="ds-field">
+                                        <label class="ds-field-label">15. Father's Father's Name</label>
+                                        <input type="text" class="ds-input">
+                                    </div>
+                                    <div class="ds-field">
+                                        <label class="ds-field-label">16. Mother's Father's Name</label>
+                                        <input type="text" class="ds-input">
+                                    </div>
+                                </div>
+                                <div class="ds-row ds-row-2">
+                                    <div class="ds-field">
+                                        <label class="ds-field-label">17. Father's Mother's Name</label>
+                                        <input type="text" class="ds-input">
+                                    </div>
+                                    <div class="ds-field">
+                                        <label class="ds-field-label">18. Mother's Mother's Name</label>
+                                        <input type="text" class="ds-input">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ═══ SECTION 3: MIGRATION & FAMILY LIFE ═══ -->
+                        <div class="wizard-step" id="wizard-step-3">
+                            <div class="wizard-content">
+                                <div class="ds-field">
+                                    <label class="ds-field-label">19. Details of Migration</label>
+                                    <input type="text" class="ds-input" placeholder="When and where migrated to">
+                                </div>
+                                <div class="ds-row ds-row-3">
+                                    <div class="ds-field">
+                                        <label class="ds-field-label">20. Marital Status</label>
+                                        <select class="ds-select"><option value="">Select</option><option>Married</option><option>Unmarried</option><option>Widowed</option></select>
+                                    </div>
+                                    <div class="ds-field">
+                                        <label class="ds-field-label">21. Spouse Name</label>
+                                        <input type="text" class="ds-input">
+                                    </div>
+                                    <div class="ds-field">
+                                        <label class="ds-field-label">22. Date of Marriage</label>
+                                        <input type="date" class="ds-input">
+                                    </div>
+                                </div>
+                                <div class="ds-row ds-row-2">
+                                    <div class="ds-field">
+                                        <label class="ds-field-label">23. Number of Children</label>
+                                        <input type="text" class="ds-input" placeholder="e.g. 2 Male, 1 Female">
+                                    </div>
+                                    <div class="ds-field">
+                                        <label class="ds-field-label">24. Details of Children</label>
+                                        <input type="text" class="ds-input" placeholder="e.g. Arun (M/Self)">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ═══ SECTION 4: EDUCATION & PROFESSION ═══ -->
+                        <div class="wizard-step" id="wizard-step-4">
+                            <div class="wizard-content">
+                                <div class="ds-row ds-row-2">
+                                    <div class="ds-field">
+                                        <label class="ds-field-label">25. Academic Qualifications</label>
+                                        <input type="text" class="ds-input">
+                                    </div>
+                                    <div class="ds-field">
+                                        <label class="ds-field-label">26. Other Certifications</label>
+                                        <input type="text" class="ds-input">
+                                    </div>
+                                </div>
+                                <div class="ds-row ds-row-3">
+                                    <div class="ds-field">
+                                        <label class="ds-field-label">27. Primary Profession / Occupation</label>
+                                        <input type="text" class="ds-input">
+                                    </div>
+                                    <div class="ds-field">
+                                        <label class="ds-field-label">28. Name of Organization</label>
+                                        <input type="text" class="ds-input">
+                                    </div>
+                                    <div class="ds-field">
+                                        <label class="ds-field-label">29. Work Location</label>
+                                        <input type="text" class="ds-input">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ═══ SECTION 5: DECLARATION & CONTACT ═══ -->
+                        <div class="wizard-step" id="wizard-step-5">
+                            <div class="wizard-content">
+                                <div class="ds-row ds-row-2">
+                                    <div class="ds-field">
+                                        <label class="ds-field-label">30. Permanent Address</label>
+                                        <textarea class="ds-textarea" rows="3" placeholder="Full permanent address"></textarea>
+                                    </div>
+                                    <div class="ds-field">
+                                        <label class="ds-field-label">31. Current Residential Address</label>
+                                        <textarea class="ds-textarea" rows="3" placeholder="Current residential address"></textarea>
+                                    </div>
+                                </div>
+                                <div class="ds-field">
+                                    <label class="ds-field-label">32. Contact Information</label>
+                                    <input type="text" class="ds-input" placeholder="Preferred contact details (Email, Phone)">
+                                </div>
+
+                                <div class="ds-terms" style="margin-top: 3rem; background: #fcf9f5; border: 1px solid #e8e3d6; padding: 2.5rem; position: relative;">
+                                    <div class="ds-terms-header" style="font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 700; color: #5c1b33; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.1em; display: flex; align-items: center; gap: 0.5rem;">
+                                        <span style="color: #b38b3a; font-size: 1.2rem;">§</span> TERMS & CONDITIONS
+                                    </div>
+                                    <p style="font-family: 'Outfit', sans-serif; font-size: 0.95rem; color: #4a4a4a; line-height: 1.6; margin-bottom: 2rem;">
+                                        I <input type="text" class="inline-input" placeholder="Your Name" style="border: none; border-bottom: 1px solid #b38b3a; background: transparent; font-family: 'Outfit'; padding: 0 10px; width: 150px; text-align: center;"> 
+                                        do hereby accept and agree to abide by the terms, conditions, liabilities and other consequences whatsoever that may arise by having provided the above information.
+                                    </p>
+                                    
+                                    <div style="width: 100%; height: 1px; background: #e8e3d6; margin-bottom: 1.5rem;"></div>
+
+                                    <div class="ds-checkbox-row" style="display: flex; align-items: flex-start; gap: 1rem;">
+                                        <input type="checkbox" id="terms-agree" class="ds-checkbox" required style="width: 20px; height: 20px; border: 1px solid #ccc; cursor: pointer; margin-top: 2px;">
+                                        <label for="terms-agree" class="ds-checkbox-text" style="font-family: 'Outfit', sans-serif; font-size: 0.95rem; font-weight: 500; color: #222; cursor: pointer;">I solemnly declare that the information provided above is true and correct to the best of my knowledge and belief.</label>
+                                    </div>
+                                </div>
+
+                                <!-- Upload Boxes -->
+                                <div class="ds-upload-row" style="display: flex; gap: 1.5rem; margin-top: 2rem;">
+                                    <div class="ds-upload-box" onclick="document.getElementById('sig-upload').click()" style="flex: 1; border: 1px dashed #d4af37; background: #fcfcfc; padding: 3rem 2rem; text-align: center; cursor: pointer; border-radius: 8px;">
+                                        <input type="file" id="sig-upload" accept="image/*" style="display:none;">
+                                        <div class="ds-upload-icon" style="width: 60px; height: 60px; margin: 0 auto 1rem; border-radius: 50%; border: 1px solid #e0e0e0; background: #fff; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">✍️</div>
+                                        <div class="ds-upload-title" style="font-family: 'Outfit', sans-serif; font-weight: 700; color: #1a2340; font-size: 1.1rem; margin-bottom: 0.5rem;">Signature & Thumb Impression</div>
+                                        <div class="ds-upload-desc" style="font-size: 0.85rem; color: #888;">Click to upload</div>
+                                    </div>
+                                    <div class="ds-upload-box" onclick="document.getElementById('photo-upload').click()" style="flex: 1; border: 1px dashed #d4af37; background: #fcfcfc; padding: 3rem 2rem; text-align: center; cursor: pointer; border-radius: 8px;">
+                                        <input type="file" id="photo-upload" accept="image/*" style="display:none;">
+                                        <div class="ds-upload-icon" style="width: 60px; height: 60px; margin: 0 auto 1rem; border-radius: 50%; border: 1px solid #e0e0e0; background: #fff; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">📷</div>
+                                        <div class="ds-upload-title" style="font-family: 'Outfit', sans-serif; font-weight: 700; color: #1a2340; font-size: 1.1rem; margin-bottom: 0.5rem;">Photo</div>
+                                        <div class="ds-upload-desc" style="font-size: 0.85rem; color: #888;">Passport-size photograph</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- End of WIZARD container -->
+
+                    <!-- Wizard Navigation -->
+                    <div class="wizard-nav">
+                        <button type="button" class="wizard-btn btn-prev" id="btn-prev" style="display: none;" onclick="prevStep()">Previous</button>
+                        <button type="button" class="wizard-btn" id="btn-next" onclick="nextStep()">Next</button>
+                        <button type="submit" class="wizard-btn" id="btn-submit" style="display: none;">Submit Heritage Record</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <!-- Brand Column -->
+            <div class="footer-col brand-col">
+                <div class="footer-logo-container">
+                    <div class="footer-logo-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polygon points="12,2 22,12 12,22 2,12" />
+                            <circle cx="12" cy="12" r="3" fill="currentColor" />
+                        </svg>
+                    </div>
+                    <span class="footer-brand-name">Know Your Family</span>
+                </div>
+                <p class="footer-desc">Dedicated to preserving Tamil culture through premium genealogy, personal history, and breathtaking legacy books.</p>
+                <div class="footer-socials">
+                    <a href="#" class="social-box" aria-label="Facebook">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="#" class="social-box" aria-label="Instagram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="#" class="social-box" aria-label="YouTube">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                    </a>
+                </div>
+            </div>
+            <!-- Services Column -->
+            <div class="footer-col">
+                <h4 class="footer-heading">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="services.html">Lineage Research</a></li>
+                    <li><a href="services.html">Elder Interviews</a></li>
+                    <li><a href="services.html">Tamil Translations</a></li>
+                    <li><a href="services.html">Heirloom Publishing</a></li>
+                </ul>
+            </div>
+            <!-- Discover Column -->
+            <div class="footer-col">
+                <h4 class="footer-heading">Discover</h4>
+                <ul class="footer-links">
+                    <li><a href="about.html">Our Heritage</a></li>
+                    <li><a href="index.html#how-it-works">The Journey</a></li>
+                    <li><a href="services.html">Gallery of Books</a></li>
+                    <li><a href="blog-index.html">Cultural Blog</a></li>
+                </ul>
+            </div>
+            <!-- Connect Column -->
+            <div class="footer-col">
+                <h4 class="footer-heading">Connect</h4>
+                <ul class="footer-contact">
+                    <li><a href="tel:18002081405" class="contact-link">1 (800) 208-1405</a></li>
+                    <li><a href="mailto:hello@knowyourfamily.com" class="contact-link">hello@knowyourfamily.com</a></li>
+                    <li class="contact-text">Chennai & Worldwide</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Footer Bottom -->
+        <div class="container footer-bottom">
+            <p class="copyright">&copy; 2026 Know Your Family. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Upload preview script -->
+    <script>
+        // Image upload preview
+        document.getElementById('photo-upload').addEventListener('change', function(e) {
+            const box = this.parentElement;
+            if (e.target.files && e.target.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(ev) {
+                    box.style.backgroundImage = 'url(' + ev.target.result + ')';
+                    box.style.backgroundSize = 'cover';
+                    box.style.backgroundPosition = 'center';
+                    box.querySelector('.ds-upload-icon').style.opacity = '0';
+                    box.querySelector('.ds-upload-title').style.opacity = '0';
+                    box.querySelector('.ds-upload-desc').style.opacity = '0';
+                };
+                reader.readAsDataURL(e.target.files[0]);
+            }
+        });
+
+        document.getElementById('sig-upload').addEventListener('change', function(e) {
+            const box = this.parentElement;
+            if (e.target.files && e.target.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(ev) {
+                    box.style.backgroundImage = 'url(' + ev.target.result + ')';
+                    box.style.backgroundSize = 'contain';
+                    box.style.backgroundPosition = 'center';
+                    box.style.backgroundRepeat = 'no-repeat';
+                    box.querySelector('.ds-upload-icon').style.opacity = '0';
+                    box.querySelector('.ds-upload-title').style.opacity = '0';
+                    box.querySelector('.ds-upload-desc').style.opacity = '0';
+                };
+                reader.readAsDataURL(e.target.files[0]);
+            }
+        });
+
+        // Wizard Logic
+        let currentStep = 1;
+        const totalSteps = 5;
+
+        function updateWizardUI() {
+            // Hide all steps
+            document.querySelectorAll('.wizard-step').forEach(step => step.classList.remove('active'));
+            // Show current step
+            document.getElementById('wizard-step-' + currentStep).classList.add('active');
+
+            // Update Progress Bar
+            document.querySelectorAll('.ds-progress-step').forEach((step, index) => {
+                if (index + 1 === currentStep) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            });
+
+            // Update Buttons
+            const btnPrev = document.getElementById('btn-prev');
+            const btnNext = document.getElementById('btn-next');
+            const btnSubmit = document.getElementById('btn-submit');
+
+            if (currentStep === 1) {
+                btnPrev.style.display = 'none';
+            } else {
+                btnPrev.style.display = 'block';
+            }
+
+            if (currentStep === totalSteps) {
+                btnNext.style.display = 'none';
+                btnSubmit.style.display = 'block';
+            } else {
+                btnNext.style.display = 'block';
+                btnSubmit.style.display = 'none';
+            }
+        }
+
+        function nextStep() {
+            if (currentStep < totalSteps) {
+                currentStep++;
+                updateWizardUI();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                updateWizardUI();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        // Initialize UI
+        updateWizardUI();
+    </script>
+
+</body>
+</html>

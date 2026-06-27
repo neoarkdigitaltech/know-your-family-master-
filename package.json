@@ -8,5 +8,9 @@
     "dev": "node server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@imgly/background-removal-node": "^1.4.5",
+    "jimp": "^1.6.1"
+  }
 }

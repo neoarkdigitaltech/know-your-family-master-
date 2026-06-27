@@ -120,3 +120,26 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Note: Form submission is now handled by native HTML action="thank-you.html"
+
+// Mobile Menu Toggle
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('open');
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    // Initialize VanillaTilt for the museum-frame to react to mouse movement
+    if (typeof VanillaTilt !== "undefined") {
+        VanillaTilt.init(document.querySelectorAll(".museum-frame"), {
+            max: 15,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.3
+        });
+    }
+});
